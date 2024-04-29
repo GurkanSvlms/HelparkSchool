@@ -1,0 +1,40 @@
+/*
+ Localizable.strings
+ HelparkIOS
+ 
+ Created by Hasan Ali Şişeci on 4.02.2024.
+ 
+ */
+
+"helpark" = "HELPARK TR";
+"live" = "Canlı";
+"intensity" = "Yoğunluk";
+"last_update" = "Son Güncelleme";
+"working_hours" = "Çalışma Saatleri";
+"closed" = "Kapalı";
+"open" = "Açık";
+"for_directions" = "Adres Tarifi";
+"park_type" = "Park Tipi";
+"car_park_tariff" = "Otopark Tarifesi";
+"hour" = "Saat";
+"price" = "Ücret";
+"save_park" = "Kayıtlı Otoparklar";
+"agreement" = "Gizlilik Sözleşmesi ve Veri Kullanımı";
+"about" = "Hakkında";
+"rate" = "Helpark'ı Değerlendir";
+"setting_title" = "Ayarlar";
+"about_text" = "
+HELPARK, kullanicilarin İstanbul'da bulunan ISPARK otoparklarını kolayca bulmalarına ve yönetmelerine yardımcı olan bir mobil uygulamadır. 
+
+Uygulama aracılığıyla, ISPARK otoparklarının konumları, doluluk oranları, isimleri, çalışma saatleri ve saatlik ücretleri gibi önemli bilgilere erişebilirsiniz. Bu bilgileri sunarken, İstanbul Büyükşehir Belediyesi'nin sağladığı resmi verilere dayanmaktayız.
+
+Uygulamamızın ISPARK otoparklarının bilgilerine erişimi İstanbul Büyükşehir Belediyesi ve ISPARK firmasının sağladığı API aracılığıyla gerçekleşmektedir. Bu sayede kullanıcılarımız, doğru ve güncel bilgilere ulaşarak otopark seçimlerini daha bilinçli bir şekilde yapabilirler.
+
+HELPARK olarak, kullanıcılarımıza daha iyi bir deneyim sunabilmek adına İstanbul Büyükşehir Belediyesi ve ISPARK API'sini kullanmaktan gurur duyuyoruz. Sağladığımız bu bilgilerin güvenilirliğine ve kesinliğine olan taahhüdümüzü uygulamamızı kullanırken de sürdürmekteyiz.
+
+Herhangi bir sorunuz veya geri bildiriminiz olduğunda lütfen bize ulaşmaktan çekinmeyin. Sizlerden gelen geri bildirimler, uygulamamızı daha da geliştirmemize yardımcı olacaktır.
+
+HELPARK'ı tercih ettiğiniz için teşekkür ederiz!";
+"about_link" = "https://helpark.com.tr/";
+"about_title" = "Hakkında";
+

@@ -1,0 +1,989 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7448A96C2B6F7ECB00BE9730 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A96B2B6F7ECB00BE9730 /* Int+Extension.swift */; };
+		7448A96F2B6F8AC400BE9730 /* PriceTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A96E2B6F8AC400BE9730 /* PriceTableView.swift */; };
+		7448A9802B6F909F00BE9730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7448A97F2B6F909F00BE9730 /* Assets.xcassets */; };
+		7448A9882B6FA17200BE9730 /* ParkingRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9872B6FA17200BE9730 /* ParkingRate.swift */; };
+		7448A98B2B6FA19400BE9730 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A98A2B6FA19400BE9730 /* Strings.swift */; };
+		7448A98E2B6FE3C800BE9730 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9902B6FE3C800BE9730 /* Localizable.strings */; };
+		7448A9932B6FE50C00BE9730 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9922B6FE50C00BE9730 /* Font+Extension.swift */; };
+		7448A9A72B6FEABE00BE9730 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9952B6FEABD00BE9730 /* Poppins-ThinItalic.ttf */; };
+		7448A9A82B6FEABE00BE9730 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9962B6FEABD00BE9730 /* Poppins-Regular.ttf */; };
+		7448A9A92B6FEABE00BE9730 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9972B6FEABD00BE9730 /* Poppins-ExtraBold.ttf */; };
+		7448A9AA2B6FEABE00BE9730 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9982B6FEABD00BE9730 /* Poppins-ExtraBoldItalic.ttf */; };
+		7448A9AB2B6FEABE00BE9730 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9992B6FEABD00BE9730 /* Poppins-ExtraLightItalic.ttf */; };
+		7448A9AC2B6FEABE00BE9730 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A99A2B6FEABD00BE9730 /* Poppins-Light.ttf */; };
+		7448A9AD2B6FEABE00BE9730 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A99B2B6FEABD00BE9730 /* Poppins-Bold.ttf */; };
+		7448A9AE2B6FEABE00BE9730 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A99C2B6FEABD00BE9730 /* Poppins-MediumItalic.ttf */; };
+		7448A9AF2B6FEABE00BE9730 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A99D2B6FEABD00BE9730 /* Poppins-Italic.ttf */; };
+		7448A9B02B6FEABE00BE9730 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A99E2B6FEABE00BE9730 /* Poppins-Black.ttf */; };
+		7448A9B12B6FEABE00BE9730 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A99F2B6FEABE00BE9730 /* Poppins-SemiBold.ttf */; };
+		7448A9B22B6FEABE00BE9730 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9A02B6FEABE00BE9730 /* Poppins-SemiBoldItalic.ttf */; };
+		7448A9B32B6FEABE00BE9730 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9A12B6FEABE00BE9730 /* Poppins-ExtraLight.ttf */; };
+		7448A9B42B6FEABE00BE9730 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9A22B6FEABE00BE9730 /* Poppins-LightItalic.ttf */; };
+		7448A9B52B6FEABE00BE9730 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9A32B6FEABE00BE9730 /* Poppins-Thin.ttf */; };
+		7448A9B62B6FEABE00BE9730 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9A42B6FEABE00BE9730 /* Poppins-BoldItalic.ttf */; };
+		7448A9B72B6FEABE00BE9730 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9A52B6FEABE00BE9730 /* Poppins-BlackItalic.ttf */; };
+		7448A9B82B6FEABE00BE9730 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7448A9A62B6FEABE00BE9730 /* Poppins-Medium.ttf */; };
+		7448A9BA2B6FEFD700BE9730 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9B92B6FEFD700BE9730 /* Image+Extension.swift */; };
+		7448A9BD2B7001D500BE9730 /* HPUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9BC2B7001D500BE9730 /* HPUserDefaultsManager.swift */; };
+		7448A9BF2B70024700BE9730 /* HPUserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9BE2B70024600BE9730 /* HPUserDefaultsKey.swift */; };
+		7448A9C12B70026D00BE9730 /* HPUserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9C02B70026D00BE9730 /* HPUserDefaultsError.swift */; };
+		7448A9C42B700C1800BE9730 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9C32B700C1800BE9730 /* FavoritesView.swift */; };
+		7448A9C62B700C2400BE9730 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7448A9C52B700C2400BE9730 /* FavoritesViewModel.swift */; };
+		746EEF242B6EB4F4007A2BE3 /* HPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF232B6EB4F4007A2BE3 /* HPNetworkError.swift */; };
+		746EEF262B6EB501007A2BE3 /* HPRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF252B6EB501007A2BE3 /* HPRequestType.swift */; };
+		746EEF282B6EB52E007A2BE3 /* HPURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF272B6EB52E007A2BE3 /* HPURLEncoding.swift */; };
+		746EEF2A2B6EB559007A2BE3 /* HPNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF292B6EB559007A2BE3 /* HPNetworkManager.swift */; };
+		746EEF2C2B6EB56A007A2BE3 /* HPNetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF2B2B6EB56A007A2BE3 /* HPNetworkRequestProtocol.swift */; };
+		746EEF2E2B6EB735007A2BE3 /* HPNetworkParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF2D2B6EB735007A2BE3 /* HPNetworkParameters.swift */; };
+		746EEF302B6EB749007A2BE3 /* HPNetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF2F2B6EB749007A2BE3 /* HPNetworkConstants.swift */; };
+		746EEF322B6EB815007A2BE3 /* CarParkNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF312B6EB815007A2BE3 /* CarParkNetworkManager.swift */; };
+		746EEF362B6EBADA007A2BE3 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF352B6EBADA007A2BE3 /* Routes.swift */; };
+		746EEF382B6EBAED007A2BE3 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF372B6EBAED007A2BE3 /* NavigationManager.swift */; };
+		746EEF3A2B6EBB17007A2BE3 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF392B6EBB17007A2BE3 /* HomeRouter.swift */; };
+		746EEF3F2B6ECE20007A2BE3 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF3E2B6ECE20007A2BE3 /* SettingsRouter.swift */; };
+		746EEF412B6ED5E5007A2BE3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF402B6ED5E4007A2BE3 /* String+Extension.swift */; };
+		746EEF452B6EE02F007A2BE3 /* HPSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF442B6EE02E007A2BE3 /* HPSquareButton.swift */; };
+		746EEF492B6EE9C9007A2BE3 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF482B6EE9C9007A2BE3 /* UIHelper.swift */; };
+		746EEF4B2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF4A2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift */; };
+		746EEF4D2B6EEE53007A2BE3 /* CarParkDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF4C2B6EEE53007A2BE3 /* CarParkDetailModel.swift */; };
+		746EEF512B6F08C5007A2BE3 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF502B6F08C5007A2BE3 /* View+Extension.swift */; };
+		746EEF562B6F0E70007A2BE3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 746EEF552B6F0E70007A2BE3 /* Lottie */; };
+		746EEF582B6F0E78007A2BE3 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF572B6F0E78007A2BE3 /* LottieView.swift */; };
+		746EEF5A2B6F0E84007A2BE3 /* JumpingPin.json in Resources */ = {isa = PBXBuildFile; fileRef = 746EEF592B6F0E84007A2BE3 /* JumpingPin.json */; };
+		746EEF5E2B6F1176007A2BE3 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF5D2B6F1176007A2BE3 /* VisualEffectView.swift */; };
+		746EEF672B6F1314007A2BE3 /* CarParkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF662B6F1314007A2BE3 /* CarParkDetailView.swift */; };
+		DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470A82B697B7B009ED739 /* MenuView.swift */; };
+		DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AB2B697FBE009ED739 /* SettingsView.swift */; };
+		DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */; };
+		DF3A04B72B702E0200CF7D7C /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A04B62B702E0200CF7D7C /* AgreementView.swift */; };
+		DF3A04BF2B70345300CF7D7C /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A04BE2B70345300CF7D7C /* AboutView.swift */; };
+		DF3A04C12B70397F00CF7D7C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A04C02B70397F00CF7D7C /* WebView.swift */; };
+		DF3A04C42B7039E500CF7D7C /* AgreementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A04C32B7039E500CF7D7C /* AgreementViewModel.swift */; };
+		DF580FCC2B66AE0200A56A35 /* HelparkIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FCB2B66AE0200A56A35 /* HelparkIOSApp.swift */; };
+		DF580FD32B66AE0300A56A35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF580FD22B66AE0300A56A35 /* Preview Assets.xcassets */; };
+		DF580FEA2B66AF8000A56A35 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FE22B66AF8000A56A35 /* HomeView.swift */; };
+		DF580FEB2B66AF8000A56A35 /* CarParkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FE32B66AF8000A56A35 /* CarParkModel.swift */; };
+		DF580FEC2B66AF8000A56A35 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FE42B66AF8000A56A35 /* HomeViewModel.swift */; };
+		DF580FED2B66AF8000A56A35 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FE62B66AF8000A56A35 /* SplashView.swift */; };
+		DF580FEE2B66AF8000A56A35 /* OnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FE82B66AF8000A56A35 /* OnboardingStepView.swift */; };
+		DF580FEF2B66AF8000A56A35 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FE92B66AF8000A56A35 /* OnboardingView.swift */; };
+		DF580FF82B66AF8B00A56A35 /* PopupOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FF32B66AF8B00A56A35 /* PopupOneButton.swift */; };
+		DF580FF92B66AF8B00A56A35 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FF42B66AF8B00A56A35 /* SearchBarView.swift */; };
+		DF580FFA2B66AF8B00A56A35 /* ParkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FF52B66AF8B00A56A35 /* ParkAnnotationView.swift */; };
+		DF580FFB2B66AF8B00A56A35 /* ParkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FF62B66AF8B00A56A35 /* ParkCardView.swift */; };
+		DF5810052B66AF8F00A56A35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FFF2B66AF8F00A56A35 /* LocationManager.swift */; };
+		DF5810062B66AF8F00A56A35 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5810012B66AF8F00A56A35 /* CoreDataManager.swift */; };
+		DF5810072B66AF8F00A56A35 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5810022B66AF8F00A56A35 /* Persistence.swift */; };
+		DF5810082B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF5810032B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7448A96B2B6F7ECB00BE9730 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		7448A96E2B6F8AC400BE9730 /* PriceTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableView.swift; sourceTree = "<group>"; };
+		7448A97F2B6F909F00BE9730 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7448A9872B6FA17200BE9730 /* ParkingRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingRate.swift; sourceTree = "<group>"; };
+		7448A98A2B6FA19400BE9730 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		7448A98F2B6FE3C800BE9730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7448A9912B6FE3DA00BE9730 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7448A9922B6FE50C00BE9730 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		7448A9952B6FEABD00BE9730 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		7448A9962B6FEABD00BE9730 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		7448A9972B6FEABD00BE9730 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7448A9982B6FEABD00BE9730 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		7448A9992B6FEABD00BE9730 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		7448A99A2B6FEABD00BE9730 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		7448A99B2B6FEABD00BE9730 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		7448A99C2B6FEABD00BE9730 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7448A99D2B6FEABD00BE9730 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		7448A99E2B6FEABE00BE9730 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		7448A99F2B6FEABE00BE9730 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		7448A9A02B6FEABE00BE9730 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		7448A9A12B6FEABE00BE9730 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		7448A9A22B6FEABE00BE9730 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		7448A9A32B6FEABE00BE9730 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		7448A9A42B6FEABE00BE9730 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7448A9A52B6FEABE00BE9730 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7448A9A62B6FEABE00BE9730 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		7448A9B92B6FEFD700BE9730 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		7448A9BB2B6FF11200BE9730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7448A9BC2B7001D500BE9730 /* HPUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPUserDefaultsManager.swift; sourceTree = "<group>"; };
+		7448A9BE2B70024600BE9730 /* HPUserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPUserDefaultsKey.swift; sourceTree = "<group>"; };
+		7448A9C02B70026D00BE9730 /* HPUserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPUserDefaultsError.swift; sourceTree = "<group>"; };
+		7448A9C32B700C1800BE9730 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		7448A9C52B700C2400BE9730 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		746EEF232B6EB4F4007A2BE3 /* HPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPNetworkError.swift; sourceTree = "<group>"; };
+		746EEF252B6EB501007A2BE3 /* HPRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRequestType.swift; sourceTree = "<group>"; };
+		746EEF272B6EB52E007A2BE3 /* HPURLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPURLEncoding.swift; sourceTree = "<group>"; };
+		746EEF292B6EB559007A2BE3 /* HPNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPNetworkManager.swift; sourceTree = "<group>"; };
+		746EEF2B2B6EB56A007A2BE3 /* HPNetworkRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPNetworkRequestProtocol.swift; sourceTree = "<group>"; };
+		746EEF2D2B6EB735007A2BE3 /* HPNetworkParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPNetworkParameters.swift; sourceTree = "<group>"; };
+		746EEF2F2B6EB749007A2BE3 /* HPNetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPNetworkConstants.swift; sourceTree = "<group>"; };
+		746EEF312B6EB815007A2BE3 /* CarParkNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkNetworkManager.swift; sourceTree = "<group>"; };
+		746EEF352B6EBADA007A2BE3 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		746EEF372B6EBAED007A2BE3 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		746EEF392B6EBB17007A2BE3 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		746EEF3E2B6ECE20007A2BE3 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		746EEF402B6ED5E4007A2BE3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		746EEF442B6EE02E007A2BE3 /* HPSquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSquareButton.swift; sourceTree = "<group>"; };
+		746EEF482B6EE9C9007A2BE3 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		746EEF4A2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkDetailViewModel.swift; sourceTree = "<group>"; };
+		746EEF4C2B6EEE53007A2BE3 /* CarParkDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkDetailModel.swift; sourceTree = "<group>"; };
+		746EEF502B6F08C5007A2BE3 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		746EEF572B6F0E78007A2BE3 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		746EEF592B6F0E84007A2BE3 /* JumpingPin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JumpingPin.json; sourceTree = "<group>"; };
+		746EEF5D2B6F1176007A2BE3 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		746EEF662B6F1314007A2BE3 /* CarParkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkDetailView.swift; sourceTree = "<group>"; };
+		DF3470A82B697B7B009ED739 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DF3470AB2B697FBE009ED739 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
+		DF3A04B62B702E0200CF7D7C /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
+		DF3A04BE2B70345300CF7D7C /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		DF3A04C02B70397F00CF7D7C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		DF3A04C32B7039E500CF7D7C /* AgreementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewModel.swift; sourceTree = "<group>"; };
+		DF580FC82B66AE0200A56A35 /* HelparkIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelparkIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF580FCB2B66AE0200A56A35 /* HelparkIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelparkIOSApp.swift; sourceTree = "<group>"; };
+		DF580FD22B66AE0300A56A35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF580FE22B66AF8000A56A35 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DF580FE32B66AF8000A56A35 /* CarParkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarParkModel.swift; sourceTree = "<group>"; };
+		DF580FE42B66AF8000A56A35 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DF580FE62B66AF8000A56A35 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		DF580FE82B66AF8000A56A35 /* OnboardingStepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingStepView.swift; sourceTree = "<group>"; };
+		DF580FE92B66AF8000A56A35 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DF580FF32B66AF8B00A56A35 /* PopupOneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupOneButton.swift; sourceTree = "<group>"; };
+		DF580FF42B66AF8B00A56A35 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		DF580FF52B66AF8B00A56A35 /* ParkAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkAnnotationView.swift; sourceTree = "<group>"; };
+		DF580FF62B66AF8B00A56A35 /* ParkCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkCardView.swift; sourceTree = "<group>"; };
+		DF580FFF2B66AF8F00A56A35 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DF5810012B66AF8F00A56A35 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DF5810022B66AF8F00A56A35 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DF5810042B66AF8F00A56A35 /* Helpark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Helpark.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF580FC52B66AE0200A56A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				746EEF562B6F0E70007A2BE3 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7448A96D2B6F8AB700BE9730 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				7448A96E2B6F8AC400BE9730 /* PriceTableView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		7448A9892B6FA18900BE9730 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				7448A98A2B6FA19400BE9730 /* Strings.swift */,
+				7448A9902B6FE3C800BE9730 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		7448A9942B6FEAB500BE9730 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7448A99E2B6FEABE00BE9730 /* Poppins-Black.ttf */,
+				7448A9A52B6FEABE00BE9730 /* Poppins-BlackItalic.ttf */,
+				7448A99B2B6FEABD00BE9730 /* Poppins-Bold.ttf */,
+				7448A9A42B6FEABE00BE9730 /* Poppins-BoldItalic.ttf */,
+				7448A9972B6FEABD00BE9730 /* Poppins-ExtraBold.ttf */,
+				7448A9982B6FEABD00BE9730 /* Poppins-ExtraBoldItalic.ttf */,
+				7448A9A12B6FEABE00BE9730 /* Poppins-ExtraLight.ttf */,
+				7448A9992B6FEABD00BE9730 /* Poppins-ExtraLightItalic.ttf */,
+				7448A99D2B6FEABD00BE9730 /* Poppins-Italic.ttf */,
+				7448A99A2B6FEABD00BE9730 /* Poppins-Light.ttf */,
+				7448A9A22B6FEABE00BE9730 /* Poppins-LightItalic.ttf */,
+				7448A9A62B6FEABE00BE9730 /* Poppins-Medium.ttf */,
+				7448A99C2B6FEABD00BE9730 /* Poppins-MediumItalic.ttf */,
+				7448A9962B6FEABD00BE9730 /* Poppins-Regular.ttf */,
+				7448A99F2B6FEABE00BE9730 /* Poppins-SemiBold.ttf */,
+				7448A9A02B6FEABE00BE9730 /* Poppins-SemiBoldItalic.ttf */,
+				7448A9A32B6FEABE00BE9730 /* Poppins-Thin.ttf */,
+				7448A9952B6FEABD00BE9730 /* Poppins-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7448A9C22B700C0700BE9730 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				7448A9C72B70156B00BE9730 /* View */,
+				7448A9C82B70157200BE9730 /* ViewModel */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		7448A9C72B70156B00BE9730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7448A9C32B700C1800BE9730 /* FavoritesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7448A9C82B70157200BE9730 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7448A9C52B700C2400BE9730 /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		746EEF1C2B6EAF74007A2BE3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF292B6EB559007A2BE3 /* HPNetworkManager.swift */,
+				746EEF232B6EB4F4007A2BE3 /* HPNetworkError.swift */,
+				746EEF252B6EB501007A2BE3 /* HPRequestType.swift */,
+				746EEF272B6EB52E007A2BE3 /* HPURLEncoding.swift */,
+				746EEF2B2B6EB56A007A2BE3 /* HPNetworkRequestProtocol.swift */,
+				746EEF2D2B6EB735007A2BE3 /* HPNetworkParameters.swift */,
+				746EEF2F2B6EB749007A2BE3 /* HPNetworkConstants.swift */,
+				746EEF332B6EB8B8007A2BE3 /* NetworkManagers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		746EEF332B6EB8B8007A2BE3 /* NetworkManagers */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF312B6EB815007A2BE3 /* CarParkNetworkManager.swift */,
+			);
+			path = NetworkManagers;
+			sourceTree = "<group>";
+		};
+		746EEF342B6EBACA007A2BE3 /* NavigationManager */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF352B6EBADA007A2BE3 /* Routes.swift */,
+				746EEF372B6EBAED007A2BE3 /* NavigationManager.swift */,
+				746EEF3B2B6EBB32007A2BE3 /* Routers */,
+			);
+			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		746EEF3B2B6EBB32007A2BE3 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF392B6EBB17007A2BE3 /* HomeRouter.swift */,
+				746EEF3E2B6ECE20007A2BE3 /* SettingsRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		746EEF522B6F0A8D007A2BE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7448A9922B6FE50C00BE9730 /* Font+Extension.swift */,
+				746EEF402B6ED5E4007A2BE3 /* String+Extension.swift */,
+				746EEF502B6F08C5007A2BE3 /* View+Extension.swift */,
+				7448A96B2B6F7ECB00BE9730 /* Int+Extension.swift */,
+				7448A9B92B6FEFD700BE9730 /* Image+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		746EEF532B6F0A99007A2BE3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7448A9892B6FA18900BE9730 /* Localizable */,
+				746EEF482B6EE9C9007A2BE3 /* UIHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		746EEF5B2B6F0E87007A2BE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7448A9942B6FEAB500BE9730 /* Fonts */,
+				746EEF5C2B6F0E8C007A2BE3 /* Lotties */,
+				7448A97F2B6F909F00BE9730 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		746EEF5C2B6F0E8C007A2BE3 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF592B6F0E84007A2BE3 /* JumpingPin.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
+		746EEF5F2B6F1253007A2BE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FE22B66AF8000A56A35 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		746EEF602B6F126C007A2BE3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FE42B66AF8000A56A35 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		746EEF612B6F127F007A2BE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FE32B66AF8000A56A35 /* CarParkModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		746EEF622B6F1286007A2BE3 /* CarParkDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF632B6F12A4007A2BE3 /* Model */,
+				746EEF642B6F12A9007A2BE3 /* View */,
+				746EEF652B6F12AC007A2BE3 /* ViewModel */,
+			);
+			path = CarParkDetailView;
+			sourceTree = "<group>";
+		};
+		746EEF632B6F12A4007A2BE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF4C2B6EEE53007A2BE3 /* CarParkDetailModel.swift */,
+				7448A9872B6FA17200BE9730 /* ParkingRate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		746EEF642B6F12A9007A2BE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7448A96D2B6F8AB700BE9730 /* Subviews */,
+				746EEF662B6F1314007A2BE3 /* CarParkDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		746EEF652B6F12AC007A2BE3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF4A2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF3470AA2B697FAC009ED739 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DF3470AB2B697FBE009ED739 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DF3A04B52B702DC400CF7D7C /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				DF3A04C22B7039D600CF7D7C /* ViewModel */,
+				DF3A04B82B702EA900CF7D7C /* View */,
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
+		DF3A04B82B702EA900CF7D7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF3A04B62B702E0200CF7D7C /* AgreementView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF3A04BC2B70343E00CF7D7C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				DF3A04BD2B70344800CF7D7C /* View */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		DF3A04BD2B70344800CF7D7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF3A04BE2B70345300CF7D7C /* AboutView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF3A04C22B7039D600CF7D7C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF3A04C32B7039E500CF7D7C /* AgreementViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF580FBF2B66AE0200A56A35 = {
+			isa = PBXGroup;
+			children = (
+				DF580FCA2B66AE0200A56A35 /* HelparkIOS */,
+				DF580FC92B66AE0200A56A35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF580FC92B66AE0200A56A35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FC82B66AE0200A56A35 /* HelparkIOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF580FCA2B66AE0200A56A35 /* HelparkIOS */ = {
+			isa = PBXGroup;
+			children = (
+				7448A9BB2B6FF11200BE9730 /* Info.plist */,
+				DF580FDE2B66AE8200A56A35 /* App */,
+				746EEF5B2B6F0E87007A2BE3 /* Resources */,
+				746EEF522B6F0A8D007A2BE3 /* Extensions */,
+				746EEF532B6F0A99007A2BE3 /* Helpers */,
+				746EEF1C2B6EAF74007A2BE3 /* Networking */,
+				DF580FFD2B66AF8F00A56A35 /* Managers */,
+				DF580FF22B66AF8B00A56A35 /* Views */,
+				DF580FE02B66AF8000A56A35 /* Scenes */,
+				DF580FD12B66AE0300A56A35 /* Preview Content */,
+			);
+			path = HelparkIOS;
+			sourceTree = "<group>";
+		};
+		DF580FD12B66AE0300A56A35 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FD22B66AE0300A56A35 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DF580FDE2B66AE8200A56A35 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FCB2B66AE0200A56A35 /* HelparkIOSApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DF580FE02B66AF8000A56A35 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DF3A04BC2B70343E00CF7D7C /* About */,
+				DF3A04B52B702DC400CF7D7C /* Privacy */,
+				DF580FE52B66AF8000A56A35 /* Splash */,
+				DF580FE72B66AF8000A56A35 /* Onboarding */,
+				DF580FE12B66AF8000A56A35 /* Home */,
+				7448A9C22B700C0700BE9730 /* Favorites */,
+				DF3470AA2B697FAC009ED739 /* Settings */,
+				746EEF622B6F1286007A2BE3 /* CarParkDetailView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DF580FE12B66AF8000A56A35 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF612B6F127F007A2BE3 /* Model */,
+				746EEF5F2B6F1253007A2BE3 /* View */,
+				746EEF602B6F126C007A2BE3 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DF580FE52B66AF8000A56A35 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FE62B66AF8000A56A35 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		DF580FE72B66AF8000A56A35 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FE82B66AF8000A56A35 /* OnboardingStepView.swift */,
+				DF580FE92B66AF8000A56A35 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DF580FF22B66AF8B00A56A35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */,
+				746EEF442B6EE02E007A2BE3 /* HPSquareButton.swift */,
+				746EEF572B6F0E78007A2BE3 /* LottieView.swift */,
+				DF3470A82B697B7B009ED739 /* MenuView.swift */,
+				DF580FF52B66AF8B00A56A35 /* ParkAnnotationView.swift */,
+				DF580FF62B66AF8B00A56A35 /* ParkCardView.swift */,
+				DF580FF32B66AF8B00A56A35 /* PopupOneButton.swift */,
+				DF580FF42B66AF8B00A56A35 /* SearchBarView.swift */,
+				746EEF5D2B6F1176007A2BE3 /* VisualEffectView.swift */,
+				DF3A04C02B70397F00CF7D7C /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF580FFD2B66AF8F00A56A35 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				746EEF342B6EBACA007A2BE3 /* NavigationManager */,
+				DF580FFE2B66AF8F00A56A35 /* Location */,
+				DF5810002B66AF8F00A56A35 /* CoreData */,
+				7448A9BC2B7001D500BE9730 /* HPUserDefaultsManager.swift */,
+				7448A9BE2B70024600BE9730 /* HPUserDefaultsKey.swift */,
+				7448A9C02B70026D00BE9730 /* HPUserDefaultsError.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DF580FFE2B66AF8F00A56A35 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				DF580FFF2B66AF8F00A56A35 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		DF5810002B66AF8F00A56A35 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DF5810012B66AF8F00A56A35 /* CoreDataManager.swift */,
+				DF5810022B66AF8F00A56A35 /* Persistence.swift */,
+				DF5810032B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF580FC72B66AE0200A56A35 /* HelparkIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF580FDB2B66AE0300A56A35 /* Build configuration list for PBXNativeTarget "HelparkIOS" */;
+			buildPhases = (
+				DF580FC42B66AE0200A56A35 /* Sources */,
+				DF580FC52B66AE0200A56A35 /* Frameworks */,
+				DF580FC62B66AE0200A56A35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelparkIOS;
+			packageProductDependencies = (
+				746EEF552B6F0E70007A2BE3 /* Lottie */,
+			);
+			productName = HelparkIOS;
+			productReference = DF580FC82B66AE0200A56A35 /* HelparkIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF580FC02B66AE0200A56A35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					DF580FC72B66AE0200A56A35 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = DF580FC32B66AE0200A56A35 /* Build configuration list for PBXProject "HelparkIOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				tr,
+			);
+			mainGroup = DF580FBF2B66AE0200A56A35;
+			packageReferences = (
+				746EEF542B6F0E70007A2BE3 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
+			productRefGroup = DF580FC92B66AE0200A56A35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF580FC72B66AE0200A56A35 /* HelparkIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF580FC62B66AE0200A56A35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7448A9B52B6FEABE00BE9730 /* Poppins-Thin.ttf in Resources */,
+				7448A9B72B6FEABE00BE9730 /* Poppins-BlackItalic.ttf in Resources */,
+				7448A9B12B6FEABE00BE9730 /* Poppins-SemiBold.ttf in Resources */,
+				7448A9B32B6FEABE00BE9730 /* Poppins-ExtraLight.ttf in Resources */,
+				7448A9B22B6FEABE00BE9730 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				7448A9AA2B6FEABE00BE9730 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				7448A9AE2B6FEABE00BE9730 /* Poppins-MediumItalic.ttf in Resources */,
+				7448A9AC2B6FEABE00BE9730 /* Poppins-Light.ttf in Resources */,
+				746EEF5A2B6F0E84007A2BE3 /* JumpingPin.json in Resources */,
+				7448A9B42B6FEABE00BE9730 /* Poppins-LightItalic.ttf in Resources */,
+				7448A98E2B6FE3C800BE9730 /* Localizable.strings in Resources */,
+				7448A9AB2B6FEABE00BE9730 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				7448A9A72B6FEABE00BE9730 /* Poppins-ThinItalic.ttf in Resources */,
+				7448A9B82B6FEABE00BE9730 /* Poppins-Medium.ttf in Resources */,
+				7448A9AF2B6FEABE00BE9730 /* Poppins-Italic.ttf in Resources */,
+				7448A9A92B6FEABE00BE9730 /* Poppins-ExtraBold.ttf in Resources */,
+				7448A9AD2B6FEABE00BE9730 /* Poppins-Bold.ttf in Resources */,
+				7448A9B02B6FEABE00BE9730 /* Poppins-Black.ttf in Resources */,
+				7448A9A82B6FEABE00BE9730 /* Poppins-Regular.ttf in Resources */,
+				7448A9802B6F909F00BE9730 /* Assets.xcassets in Resources */,
+				DF580FD32B66AE0300A56A35 /* Preview Assets.xcassets in Resources */,
+				7448A9B62B6FEABE00BE9730 /* Poppins-BoldItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF580FC42B66AE0200A56A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF580FEE2B66AF8000A56A35 /* OnboardingStepView.swift in Sources */,
+				746EEF582B6F0E78007A2BE3 /* LottieView.swift in Sources */,
+				746EEF262B6EB501007A2BE3 /* HPRequestType.swift in Sources */,
+				746EEF672B6F1314007A2BE3 /* CarParkDetailView.swift in Sources */,
+				DF3A04BF2B70345300CF7D7C /* AboutView.swift in Sources */,
+				DF5810082B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld in Sources */,
+				DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */,
+				746EEF3A2B6EBB17007A2BE3 /* HomeRouter.swift in Sources */,
+				746EEF362B6EBADA007A2BE3 /* Routes.swift in Sources */,
+				7448A98B2B6FA19400BE9730 /* Strings.swift in Sources */,
+				DF580FED2B66AF8000A56A35 /* SplashView.swift in Sources */,
+				746EEF412B6ED5E5007A2BE3 /* String+Extension.swift in Sources */,
+				DF5810062B66AF8F00A56A35 /* CoreDataManager.swift in Sources */,
+				DF5810052B66AF8F00A56A35 /* LocationManager.swift in Sources */,
+				746EEF5E2B6F1176007A2BE3 /* VisualEffectView.swift in Sources */,
+				7448A96F2B6F8AC400BE9730 /* PriceTableView.swift in Sources */,
+				746EEF3F2B6ECE20007A2BE3 /* SettingsRouter.swift in Sources */,
+				746EEF4D2B6EEE53007A2BE3 /* CarParkDetailModel.swift in Sources */,
+				DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */,
+				746EEF382B6EBAED007A2BE3 /* NavigationManager.swift in Sources */,
+				DF580FEF2B66AF8000A56A35 /* OnboardingView.swift in Sources */,
+				DF3A04C42B7039E500CF7D7C /* AgreementViewModel.swift in Sources */,
+				7448A9BA2B6FEFD700BE9730 /* Image+Extension.swift in Sources */,
+				7448A9C62B700C2400BE9730 /* FavoritesViewModel.swift in Sources */,
+				746EEF512B6F08C5007A2BE3 /* View+Extension.swift in Sources */,
+				DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */,
+				746EEF2E2B6EB735007A2BE3 /* HPNetworkParameters.swift in Sources */,
+				746EEF242B6EB4F4007A2BE3 /* HPNetworkError.swift in Sources */,
+				7448A9BF2B70024700BE9730 /* HPUserDefaultsKey.swift in Sources */,
+				DF580FF92B66AF8B00A56A35 /* SearchBarView.swift in Sources */,
+				746EEF322B6EB815007A2BE3 /* CarParkNetworkManager.swift in Sources */,
+				7448A9932B6FE50C00BE9730 /* Font+Extension.swift in Sources */,
+				7448A9C12B70026D00BE9730 /* HPUserDefaultsError.swift in Sources */,
+				7448A9C42B700C1800BE9730 /* FavoritesView.swift in Sources */,
+				DF3A04C12B70397F00CF7D7C /* WebView.swift in Sources */,
+				DF580FEB2B66AF8000A56A35 /* CarParkModel.swift in Sources */,
+				7448A96C2B6F7ECB00BE9730 /* Int+Extension.swift in Sources */,
+				DF3A04B72B702E0200CF7D7C /* AgreementView.swift in Sources */,
+				746EEF452B6EE02F007A2BE3 /* HPSquareButton.swift in Sources */,
+				DF5810072B66AF8F00A56A35 /* Persistence.swift in Sources */,
+				746EEF282B6EB52E007A2BE3 /* HPURLEncoding.swift in Sources */,
+				7448A9882B6FA17200BE9730 /* ParkingRate.swift in Sources */,
+				746EEF2A2B6EB559007A2BE3 /* HPNetworkManager.swift in Sources */,
+				746EEF2C2B6EB56A007A2BE3 /* HPNetworkRequestProtocol.swift in Sources */,
+				DF580FEC2B66AF8000A56A35 /* HomeViewModel.swift in Sources */,
+				DF580FFA2B66AF8B00A56A35 /* ParkAnnotationView.swift in Sources */,
+				DF580FFB2B66AF8B00A56A35 /* ParkCardView.swift in Sources */,
+				746EEF492B6EE9C9007A2BE3 /* UIHelper.swift in Sources */,
+				746EEF302B6EB749007A2BE3 /* HPNetworkConstants.swift in Sources */,
+				746EEF4B2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift in Sources */,
+				DF580FEA2B66AF8000A56A35 /* HomeView.swift in Sources */,
+				DF580FCC2B66AE0200A56A35 /* HelparkIOSApp.swift in Sources */,
+				7448A9BD2B7001D500BE9730 /* HPUserDefaultsManager.swift in Sources */,
+				DF580FF82B66AF8B00A56A35 /* PopupOneButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7448A9902B6FE3C800BE9730 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7448A98F2B6FE3C800BE9730 /* en */,
+				7448A9912B6FE3DA00BE9730 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF580FD92B66AE0300A56A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF580FDA2B66AE0300A56A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF580FDC2B66AE0300A56A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HelparkIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = TKNL87497B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelparkIOS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Yakınınızdaki Otoparkları Listelemek İçin Konum İzninize İhtiyacımız Var";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpark.com.tr.HelparkIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF580FDD2B66AE0300A56A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HelparkIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = TKNL87497B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelparkIOS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Yakınınızdaki Otoparkları Listelemek İçin Konum İzninize İhtiyacımız Var";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpark.com.tr.HelparkIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF580FC32B66AE0200A56A35 /* Build configuration list for PBXProject "HelparkIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF580FD92B66AE0300A56A35 /* Debug */,
+				DF580FDA2B66AE0300A56A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF580FDB2B66AE0300A56A35 /* Build configuration list for PBXNativeTarget "HelparkIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF580FDC2B66AE0300A56A35 /* Debug */,
+				DF580FDD2B66AE0300A56A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		746EEF542B6F0E70007A2BE3 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		746EEF552B6F0E70007A2BE3 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 746EEF542B6F0E70007A2BE3 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DF5810032B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF5810042B66AF8F00A56A35 /* Helpark.xcdatamodel */,
+			);
+			currentVersion = DF5810042B66AF8F00A56A35 /* Helpark.xcdatamodel */;
+			path = HelparkIOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DF580FC02B66AE0200A56A35 /* Project object */;
+}
