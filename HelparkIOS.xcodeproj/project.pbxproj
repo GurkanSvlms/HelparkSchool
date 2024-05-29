@@ -84,6 +84,10 @@
 		DF5810062B66AF8F00A56A35 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5810012B66AF8F00A56A35 /* CoreDataManager.swift */; };
 		DF5810072B66AF8F00A56A35 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5810022B66AF8F00A56A35 /* Persistence.swift */; };
 		DF5810082B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF5810032B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld */; };
+		DFA690502C06092800186754 /* WelcomeLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6904F2C06092800186754 /* WelcomeLoginView.swift */; };
+		DFA690522C06093400186754 /* WelcomeLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA690512C06093400186754 /* WelcomeLoginModel.swift */; };
+		DFA690542C06094000186754 /* WelcomeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA690532C06094000186754 /* WelcomeLoginViewModel.swift */; };
+		DFA690562C0609BC00186754 /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA690552C0609BC00186754 /* ValidationTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +170,10 @@
 		DF5810012B66AF8F00A56A35 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DF5810022B66AF8F00A56A35 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DF5810042B66AF8F00A56A35 /* Helpark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Helpark.xcdatamodel; sourceTree = "<group>"; };
+		DFA6904F2C06092800186754 /* WelcomeLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginView.swift; sourceTree = "<group>"; };
+		DFA690512C06093400186754 /* WelcomeLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginModel.swift; sourceTree = "<group>"; };
+		DFA690532C06094000186754 /* WelcomeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewModel.swift; sourceTree = "<group>"; };
+		DFA690552C0609BC00186754 /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +396,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DF0382BC2BE0078300404EC6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DFA6904E2C0608F400186754 /* Register */,
+				DFA6904D2C0608F000186754 /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		DF3470AA2B697FAC009ED739 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +506,7 @@
 		DF580FE02B66AF8000A56A35 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DF0382BC2BE0078300404EC6 /* Authentication */,
 				DF3A04BC2B70343E00CF7D7C /* About */,
 				DF3A04B52B702DC400CF7D7C /* Privacy */,
 				DF580FE52B66AF8000A56A35 /* Splash */,
@@ -541,6 +559,7 @@
 				DF580FF42B66AF8B00A56A35 /* SearchBarView.swift */,
 				746EEF5D2B6F1176007A2BE3 /* VisualEffectView.swift */,
 				DF3A04C02B70397F00CF7D7C /* WebView.swift */,
+				DFA690552C0609BC00186754 /* ValidationTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -574,6 +593,23 @@
 				DF5810032B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		DFA6904D2C0608F000186754 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DFA6904F2C06092800186754 /* WelcomeLoginView.swift */,
+				DFA690512C06093400186754 /* WelcomeLoginModel.swift */,
+				DFA690532C06094000186754 /* WelcomeLoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DFA6904E2C0608F400186754 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -702,6 +738,7 @@
 				746EEF2E2B6EB735007A2BE3 /* HPNetworkParameters.swift in Sources */,
 				746EEF242B6EB4F4007A2BE3 /* HPNetworkError.swift in Sources */,
 				7448A9BF2B70024700BE9730 /* HPUserDefaultsKey.swift in Sources */,
+				DFA690542C06094000186754 /* WelcomeLoginViewModel.swift in Sources */,
 				DF580FF92B66AF8B00A56A35 /* SearchBarView.swift in Sources */,
 				746EEF322B6EB815007A2BE3 /* CarParkNetworkManager.swift in Sources */,
 				7448A9932B6FE50C00BE9730 /* Font+Extension.swift in Sources */,
@@ -709,6 +746,7 @@
 				7448A9C42B700C1800BE9730 /* FavoritesView.swift in Sources */,
 				DF3A04C12B70397F00CF7D7C /* WebView.swift in Sources */,
 				DF580FEB2B66AF8000A56A35 /* CarParkModel.swift in Sources */,
+				DFA690502C06092800186754 /* WelcomeLoginView.swift in Sources */,
 				7448A96C2B6F7ECB00BE9730 /* Int+Extension.swift in Sources */,
 				DF3A04B72B702E0200CF7D7C /* AgreementView.swift in Sources */,
 				746EEF452B6EE02F007A2BE3 /* HPSquareButton.swift in Sources */,
@@ -717,9 +755,11 @@
 				7448A9882B6FA17200BE9730 /* ParkingRate.swift in Sources */,
 				746EEF2A2B6EB559007A2BE3 /* HPNetworkManager.swift in Sources */,
 				746EEF2C2B6EB56A007A2BE3 /* HPNetworkRequestProtocol.swift in Sources */,
+				DFA690562C0609BC00186754 /* ValidationTextField.swift in Sources */,
 				DF580FEC2B66AF8000A56A35 /* HomeViewModel.swift in Sources */,
 				DF580FFA2B66AF8B00A56A35 /* ParkAnnotationView.swift in Sources */,
 				DF580FFB2B66AF8B00A56A35 /* ParkCardView.swift in Sources */,
+				DFA690522C06093400186754 /* WelcomeLoginModel.swift in Sources */,
 				746EEF492B6EE9C9007A2BE3 /* UIHelper.swift in Sources */,
 				746EEF302B6EB749007A2BE3 /* HPNetworkConstants.swift in Sources */,
 				746EEF4B2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift in Sources */,
