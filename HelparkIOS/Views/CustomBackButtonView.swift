@@ -25,7 +25,6 @@ struct CustomBackButtonView: View {
 struct CustomBackButtonView_Previews: PreviewProvider {
     static var previews: some View {
         CustomBackButtonView()
-            .background(Color.gray)
     }
 }
 

@@ -17,6 +17,8 @@ struct HomeRouter {
             OnboardingView()
         case .home:
             HomeView()
+        case .login:
+            WelcomeLoginView()
         }
     }
 }
@@ -24,4 +26,5 @@ struct HomeRouter {
 enum HomeRoutes: Hashable {
     case onboarding
     case home
+    case login
 }

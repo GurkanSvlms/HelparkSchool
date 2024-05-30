@@ -88,6 +88,9 @@
 		DFA690522C06093400186754 /* WelcomeLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA690512C06093400186754 /* WelcomeLoginModel.swift */; };
 		DFA690542C06094000186754 /* WelcomeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA690532C06094000186754 /* WelcomeLoginViewModel.swift */; };
 		DFA690562C0609BC00186754 /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA690552C0609BC00186754 /* ValidationTextField.swift */; };
+		DFB8EBAA2C0912120020FED1 /* OtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8EBA92C0912120020FED1 /* OtpView.swift */; };
+		DFB8EBAC2C0912200020FED1 /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8EBAB2C0912200020FED1 /* OtpViewModel.swift */; };
+		DFB8EBAE2C0912280020FED1 /* OtpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8EBAD2C0912280020FED1 /* OtpModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,6 +177,9 @@
 		DFA690512C06093400186754 /* WelcomeLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginModel.swift; sourceTree = "<group>"; };
 		DFA690532C06094000186754 /* WelcomeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewModel.swift; sourceTree = "<group>"; };
 		DFA690552C0609BC00186754 /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
+		DFB8EBA92C0912120020FED1 /* OtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpView.swift; sourceTree = "<group>"; };
+		DFB8EBAB2C0912200020FED1 /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewModel.swift; sourceTree = "<group>"; };
+		DFB8EBAD2C0912280020FED1 /* OtpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,6 +512,7 @@
 		DF580FE02B66AF8000A56A35 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DFB8EBA82C0911D60020FED1 /* Otp */,
 				DF0382BC2BE0078300404EC6 /* Authentication */,
 				DF3A04BC2B70343E00CF7D7C /* About */,
 				DF3A04B52B702DC400CF7D7C /* Privacy */,
@@ -612,6 +619,16 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		DFB8EBA82C0911D60020FED1 /* Otp */ = {
+			isa = PBXGroup;
+			children = (
+				DFB8EBA92C0912120020FED1 /* OtpView.swift */,
+				DFB8EBAB2C0912200020FED1 /* OtpViewModel.swift */,
+				DFB8EBAD2C0912280020FED1 /* OtpModel.swift */,
+			);
+			path = Otp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -716,10 +733,13 @@
 				DF3A04BF2B70345300CF7D7C /* AboutView.swift in Sources */,
 				DF5810082B66AF8F00A56A35 /* HelparkIOS.xcdatamodeld in Sources */,
 				DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */,
+				DFB8EBAA2C0912120020FED1 /* OtpView.swift in Sources */,
 				746EEF3A2B6EBB17007A2BE3 /* HomeRouter.swift in Sources */,
 				746EEF362B6EBADA007A2BE3 /* Routes.swift in Sources */,
 				7448A98B2B6FA19400BE9730 /* Strings.swift in Sources */,
 				DF580FED2B66AF8000A56A35 /* SplashView.swift in Sources */,
+				DFB8EBAE2C0912280020FED1 /* OtpModel.swift in Sources */,
+				DFB8EBAC2C0912200020FED1 /* OtpViewModel.swift in Sources */,
 				746EEF412B6ED5E5007A2BE3 /* String+Extension.swift in Sources */,
 				DF5810062B66AF8F00A56A35 /* CoreDataManager.swift in Sources */,
 				DF5810052B66AF8F00A56A35 /* LocationManager.swift in Sources */,

@@ -17,24 +17,25 @@ struct ValidationTextField: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
-                if !text.isEmpty {
-                    Text(placeholder)
-                        .foregroundColor(.gray)
-                        .font(.popSemiboldTitle)
-                        .padding(.leading, 10)
-                }
                 HStack {
-                    TextField("", text: $text)
-                        .foregroundColor(fontColor)
-                        .disableAutocorrection(true)
-                        .padding(.horizontal, 10)
+                    ZStack(alignment: .leading) {
+                        if text.isEmpty {
+                            Text(placeholder)
+                                .foregroundColor(.gray)
+                                .font(.popRegularCallout)
+                                .padding(.leading, 10)
+                        }
+                        TextField("", text: $text)
+                            .foregroundColor(fontColor)
+                            .disableAutocorrection(true)
+                            .padding(.horizontal, 10)
+                    }
                 }
             }
         }
         .frame(height: 50)
         .background(Color.white)
-        .cornerRadius(8)
-        .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.gray, lineWidth: 1))
+        .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.gray, lineWidth: 1))
     }
 }
 
@@ -48,8 +49,8 @@ struct CUINDTextField_Previews: PreviewProvider {
         
         var body: some View {
             ValidationTextField(text: $text,
-                           placeholder: "Enter text",
-                           fontColor: .black)
+                                placeholder: "Enter text",
+                                fontColor: .black)
             .padding()
         }
     }

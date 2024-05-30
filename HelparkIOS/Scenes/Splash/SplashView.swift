@@ -59,7 +59,7 @@ struct SplashView: View {
                 if coreDataManager.getOnboardingStatus() {
                     navigationManager.navigate(.home(.onboarding))
                 } else {
-                    navigationManager.navigate(.home(.home))
+                    navigationManager.navigate(.home(.login))
                 }
             }
         }
