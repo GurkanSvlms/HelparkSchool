@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct WelcomeLoginView: View {
-    
+    @EnvironmentObject var navigationManager: NavigationManager
     @State private var passwordText = ""
-    @State private var goToRegister = false
+    
     var body: some View {
         
         VStack(alignment: .center){
@@ -58,11 +58,12 @@ struct WelcomeLoginView: View {
                     alignment: .bottom
                 )
                 .onTapGesture {
-                    goToRegister = true
+                    navigationManager.navigate(.home(.register))
                 }
         }
         .padding(.horizontal, 16)
         .navigationBarBackButtonHidden(true)
+        .ignoresSafeArea()
     }
 }
 

@@ -14,9 +14,9 @@ struct SplashView: View {
     
     @State private var isLocation = true
     @State private var showPopup = false
-
+    
     private var willEnterForegroundPublisher = NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
-
+    
     var body: some View {
         ZStack {
             VStack {
@@ -42,16 +42,16 @@ struct SplashView: View {
                 }
             }
         }
-            .onAppear() {
+        .onAppear() {
             checkLocationAndNavigate()
         }
-            .onReceive(willEnterForegroundPublisher) { _ in
+        .onReceive(willEnterForegroundPublisher) { _ in
             checkLocationAndNavigate()
         }
-            .statusBarHidden(true)
-            .navigationBarHidden(true)
+        .statusBarHidden(true)
+        .navigationBarHidden(true)
     }
-
+    
     private func checkLocationAndNavigate() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             isLocation = locationManager.isLocationEnabled
