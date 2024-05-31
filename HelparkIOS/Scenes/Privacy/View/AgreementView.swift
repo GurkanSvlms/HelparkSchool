@@ -20,14 +20,14 @@ struct AgreementView: View {
             .edgesIgnoringSafeArea(.all)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CustomBackButtonView())
-        if forRegister && !agreementMarked{
+        if forRegister{
             Spacer()
             
             Button(action: {
-                agreementMarked = true
+                agreementMarked.toggle()
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                Text("Onaylıyorum")
+                Text(agreementMarked ? "Onaylamıyorum" : "Onaylıyorum")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 330)

@@ -31,97 +31,98 @@ struct RegisterView: View {
     }
     
     var body: some View {
-        ZStack {
-            VStack(spacing: 16){
-                
-                ValidationTextField(
-                    text: $userName,
-                    placeholder: "İsim",
-                    fontColor: Color("#3c7484"))
-                
-                ValidationTextField(
-                    text: $userLastName,
-                    placeholder: "Soyisim",
-                    fontColor: Color("#3c7484"))
-                
-                ValidationTextField(
-                    text: $userMail,
-                    placeholder: "E-Posta",
-                    fontColor: Color("#3c7484"))
-                
-                ValidationTextField(
-                    text: $userPhoneNumber,
-                    placeholder: "Telefon Numaranız",
-                    fontColor: Color("#3c7484"))
-                
-                CheckBoxView(
-                    isMarked: $smsAgreed,
-                    docText: .constant("SMS"),
-                    forRegister: true)
-                
-                CheckBoxView(
-                    isMarked: $emailAgreed,
-                    docText: .constant("E-Posta"),
-                    forRegister: true)
-                
-                Spacer()
-                
-                if viewModel.isLoading {
-                    ProgressView()
-                        .padding()
-                } else {
-                    Button(action: {
-                        viewModel.registerUser(
-                            name: userName,
-                            surname: userLastName,
-                            email: userMail,
-                            phoneNumber: userPhoneNumber)
-                    }) {
-                        Text("Kayıt Ol")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(width: 330)
-                            .padding()
-                            .background(Color("#3c7484"))
-                            .cornerRadius(16)
-                    }
-                    .padding(.top, 20)
-                    .opacity(buttonEnabled ? 1.0 : 0.5)
-                    .disabled(!buttonEnabled)
+        VStack {
+            ScrollView {
+                VStack(spacing: 16){
+                    
+                    ValidationTextField(
+                        text: $userName,
+                        placeholder: "İsim",
+                        fontColor: Color("#3c7484"))
+                    
+                    ValidationTextField(
+                        text: $userLastName,
+                        placeholder: "Soyisim",
+                        fontColor: Color("#3c7484"))
+                    
+                    ValidationTextField(
+                        text: $userMail,
+                        placeholder: "E-Posta",
+                        fontColor: Color("#3c7484"))
+                    
+                    ValidationTextField(
+                        text: $userPhoneNumber,
+                        placeholder: "Telefon Numaranız",
+                        fontColor: Color("#3c7484"))
+                    
+                    CheckBoxView(
+                        isMarked: $smsAgreed,
+                        docText: .constant("SMS"),
+                        forRegister: true)
+                    
+                    CheckBoxView(
+                        isMarked: $emailAgreed,
+                        docText: .constant("E-Posta"),
+                        forRegister: true)
+                    
                 }
-            }
-            .navigationTitle("Kayıt Ol")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: CustomBackButtonView())
-            .padding(.horizontal)
-            .padding(.top, 40)
-            .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            }
-            if showPopup {
-                PopupOneButton(
-                    title: popupTitle,
-                    subtitle: popupSubtitle,
-                    buttonText: "Tamam",
-                    buttonAction: {
-                        showPopup = false
+                .navigationTitle("Kayıt Ol")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: CustomBackButtonView())
+                .padding(.horizontal)
+                .padding(.top, 40)
+                .onReceive(viewModel.$error) { error in
+                    if let error = error {
+                        popupTitle = "Hata"
+                        popupSubtitle = error.localizedDescription
+                        showPopup = true
                     }
-                )
+                }
+                .onChange(of: viewModel.goToHomeView, perform: { value in
+                    if value{
+                        navigationManager.navigate(.home(.home))
+                    }
+                })
+            }
+            Spacer()
+            
+            if viewModel.isLoading {
+                ProgressView()
+                    .padding()
+            } else {
+                Button(action: {
+                    viewModel.registerUser(
+                        name: userName,
+                        surname: userLastName,
+                        email: userMail,
+                        phoneNumber: userPhoneNumber)
+                }) {
+                    Text("Kayıt Ol")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(width: 330)
+                        .padding()
+                        .background(Color("#3c7484"))
+                        .cornerRadius(16)
+                }
+                .opacity(buttonEnabled ? 1.0 : 0.5)
+                .disabled(!buttonEnabled)
             }
         }
-        .onReceive(viewModel.$error) { error in
-            if let error = error {
-                popupTitle = "Hata"
-                popupSubtitle = error.localizedDescription
-                showPopup = true
-            }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
-        .onChange(of: viewModel.goToHomeView, perform: { value in
-            if value{
-                navigationManager.navigate(.home(.home))
-            }
-        })
+        if showPopup {
+            PopupOneButton(
+                title: popupTitle,
+                subtitle: popupSubtitle,
+                buttonText: "Tamam",
+                buttonAction: {
+                    showPopup = false
+                }
+            )
+        }
     }
 }
 
