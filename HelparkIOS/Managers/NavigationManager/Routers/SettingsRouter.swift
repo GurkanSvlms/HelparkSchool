@@ -18,7 +18,7 @@ struct SettingsRouter {
         case .favorites:
             FavoritesView()
         case .agreement:
-            AgreementView()
+            AgreementView(agreementMarked: .constant(false), forRegister: .constant(false))
         case .about:
             AboutView()
         }

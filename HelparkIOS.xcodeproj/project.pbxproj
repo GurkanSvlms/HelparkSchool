@@ -61,6 +61,7 @@
 		746EEF5A2B6F0E84007A2BE3 /* JumpingPin.json in Resources */ = {isa = PBXBuildFile; fileRef = 746EEF592B6F0E84007A2BE3 /* JumpingPin.json */; };
 		746EEF5E2B6F1176007A2BE3 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF5D2B6F1176007A2BE3 /* VisualEffectView.swift */; };
 		746EEF672B6F1314007A2BE3 /* CarParkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEF662B6F1314007A2BE3 /* CarParkDetailView.swift */; };
+		DF220B2F2C0A66E9005209C0 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B2E2C0A66E9005209C0 /* CheckBoxView.swift */; };
 		DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470A82B697B7B009ED739 /* MenuView.swift */; };
 		DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AB2B697FBE009ED739 /* SettingsView.swift */; };
 		DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */; };
@@ -152,6 +153,7 @@
 		746EEF592B6F0E84007A2BE3 /* JumpingPin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JumpingPin.json; sourceTree = "<group>"; };
 		746EEF5D2B6F1176007A2BE3 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		746EEF662B6F1314007A2BE3 /* CarParkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkDetailView.swift; sourceTree = "<group>"; };
+		DF220B2E2C0A66E9005209C0 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		DF3470A82B697B7B009ED739 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DF3470AB2B697FBE009ED739 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 				746EEF5D2B6F1176007A2BE3 /* VisualEffectView.swift */,
 				DF3A04C02B70397F00CF7D7C /* WebView.swift */,
 				DFA690552C0609BC00186754 /* ValidationTextField.swift */,
+				DF220B2E2C0A66E9005209C0 /* CheckBoxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				746EEF302B6EB749007A2BE3 /* HPNetworkConstants.swift in Sources */,
 				746EEF4B2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift in Sources */,
 				DF580FEA2B66AF8000A56A35 /* HomeView.swift in Sources */,
+				DF220B2F2C0A66E9005209C0 /* CheckBoxView.swift in Sources */,
 				DF580FCC2B66AE0200A56A35 /* HelparkIOSApp.swift in Sources */,
 				7448A9BD2B7001D500BE9730 /* HPUserDefaultsManager.swift in Sources */,
 				DF580FF82B66AF8B00A56A35 /* PopupOneButton.swift in Sources */,

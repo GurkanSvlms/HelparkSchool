@@ -12,6 +12,7 @@ class RegisterViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: Error?
     @Published var successMessage: String?
+    @Published var goToHomeView = false
     
     // Register user function
     func registerUser(name: String, surname: String, email: String, phoneNumber: String) {
@@ -71,6 +72,7 @@ class RegisterViewModel: ObservableObject {
                 do {
                     let response = try JSONDecoder().decode(RegisterResponseModel.self, from: data)
                     self?.successMessage = response.message
+                    self?.goToHomeView = true
                 } catch {
                     self?.error = error
                 }

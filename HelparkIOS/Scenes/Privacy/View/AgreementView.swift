@@ -10,17 +10,38 @@ import WebKit
 
 struct AgreementView: View {
     @StateObject private var viewModel = AgreementViewModel()
+    @Environment(\.presentationMode) var presentationMode
 
+
+    @Binding var agreementMarked : Bool
+    @Binding var forRegister : Bool
     var body: some View {
         WebView(urlString: viewModel.urlString)
             .edgesIgnoringSafeArea(.all)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CustomBackButtonView())
+        if forRegister && !agreementMarked{
+            Spacer()
+            
+            Button(action: {
+                agreementMarked = true
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("Onaylıyorum")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 330)
+                    .padding()
+                    .background(Color("#3c7484"))
+                    .cornerRadius(16)
+            }
+        }
+        
     }
 }
 
 struct AgreementView_Previews: PreviewProvider {
     static var previews: some View {
-        AgreementView()
+        AgreementView(agreementMarked: .constant(false), forRegister: .constant(true))
     }
 }

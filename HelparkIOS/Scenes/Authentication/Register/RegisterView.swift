@@ -9,6 +9,7 @@ import SwiftUI
 struct RegisterView: View {
     
     @StateObject private var viewModel = RegisterViewModel()
+    @EnvironmentObject var navigationManager: NavigationManager
     
     @State private var userName = ""
     @State private var userLastName = ""
@@ -18,6 +19,9 @@ struct RegisterView: View {
     @State private var showPopup = false
     @State private var popupTitle = ""
     @State private var popupSubtitle = ""
+    
+    @State private var smsAgreed = false
+    @State private var emailAgreed = false
     
     private var buttonEnabled: Bool {
         !userName.isEmpty &&
@@ -50,6 +54,16 @@ struct RegisterView: View {
                     placeholder: "Telefon Numaranız",
                     fontColor: Color("#3c7484"))
                 
+                CheckBoxView(
+                    isMarked: $smsAgreed,
+                    docText: .constant("SMS"),
+                    forRegister: true)
+                
+                CheckBoxView(
+                    isMarked: $emailAgreed,
+                    docText: .constant("E-Posta"),
+                    forRegister: true)
+                
                 Spacer()
                 
                 if viewModel.isLoading {
@@ -80,7 +94,6 @@ struct RegisterView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CustomBackButtonView())
-            .ignoresSafeArea()
             .padding(.horizontal)
             .padding(.top, 40)
             .onTapGesture {
@@ -104,13 +117,11 @@ struct RegisterView: View {
                 showPopup = true
             }
         }
-        .onReceive(viewModel.$successMessage) { successMessage in
-            if let successMessage = successMessage {
-                popupTitle = "Başarılı"
-                popupSubtitle = successMessage.description
-                showPopup = true
+        .onChange(of: viewModel.goToHomeView, perform: { value in
+            if value{
+                navigationManager.navigate(.home(.home))
             }
-        }
+        })
     }
 }
 
