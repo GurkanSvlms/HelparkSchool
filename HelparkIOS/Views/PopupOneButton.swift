@@ -16,7 +16,6 @@ struct PopupOneButton: View {
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3).edgesIgnoringSafeArea(.all)
-            
             VStack {
                 Text(title)
                     .font(.title)
@@ -43,6 +42,9 @@ struct PopupOneButton: View {
             .frame(width: 300, height: 200)
             .background(Color.white)
             .cornerRadius(20)
+        }
+        .onAppear{
+            hideKeyboard()
         }
     }
 }
