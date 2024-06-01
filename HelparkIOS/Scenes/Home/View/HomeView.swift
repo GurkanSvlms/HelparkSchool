@@ -26,9 +26,9 @@ struct HomeView: View {
         }
 
             .sheet(isPresented: $viewModel.showDetailCard, content: {
-            CarParkDetailView(carPark: viewModel.selectedCarPark)
-                .presentationDetents([.height(235), .large])
-                .topAligned()
+//            CarParkDetailView(carPark: viewModel.selectedCarPark)
+//                .presentationDetents([.height(235), .large])
+//                .topAligned()
         })
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
@@ -75,8 +75,8 @@ struct HomeView: View {
     }
 
     private func tapPinAction(_ carPark: CarParkModel) {
-        if viewModel.lastTappedParkID != nil && viewModel.lastTappedParkID == carPark.id {
-            viewModel.lastTappedParkID = nil
+        if viewModel.lastTappedParkID != 0 && viewModel.lastTappedParkID == carPark.id {
+            viewModel.lastTappedParkID = 0
         } else {
             viewModel.selectedCarPark = carPark
             viewModel.showDetailCard = true

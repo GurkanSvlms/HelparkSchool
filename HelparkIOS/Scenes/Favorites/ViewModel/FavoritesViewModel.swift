@@ -10,8 +10,8 @@ import SwiftUI
 
 class FavoritesViewModel: ObservableObject {
     @Published var carParks: [CarParkModel] = []
-    @Published var selectedCarPark: CarParkModel = CarParkModel()
-    @Published var carParkDetail: CarParkDetailModel = CarParkDetailModel()
+    @Published var selectedCarPark: CarParkModel = CarParkModel.defaultCarPark
+    @Published var carParkDetail: CarParkDetailModel = CarParkDetailModel.defaultDetail
     @Published var errorMessage: String? = nil
 
     @Published var isFavorite: Bool = false

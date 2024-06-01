@@ -7,12 +7,37 @@
 
 import MapKit
 
-struct CarParkModel: Identifiable, Codable, Hashable {
-    var id = UUID()
-    let parkID: Int
+import Foundation
+
+struct CarParkDetailModel: Codable {
+    let id: Int
+    let parkId: Int
+    let updateDate: String
+    let workHours: String
+    let monthlyFee: Double
+    let tariff: String
+    let district: String
+    let address: String
+    let areaPolygon: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case parkId
+        case updateDate
+        case workHours
+        case monthlyFee
+        case tariff
+        case district
+        case address
+        case areaPolygon
+    }
+}
+
+struct CarParkModel: Codable, Identifiable {
+    let id: Int
     let parkName: String
-    let latitude: String
-    let longitude: String
+    let lat: String
+    let lng: String
     let capacity: Int
     let emptyCapacity: Int
     let workHours: String
@@ -20,12 +45,16 @@ struct CarParkModel: Identifiable, Codable, Hashable {
     let freeTime: Int
     let district: String
     let isOpen: Int
+    let isOpened: Bool
+    let parkPoint: String
+    let state: Int
+    let parkDetail: CarParkDetailModel
 
     enum CodingKeys: String, CodingKey {
-        case parkID
+        case id
         case parkName
-        case latitude = "lat"
-        case longitude = "lng"
+        case lat
+        case lng
         case capacity
         case emptyCapacity
         case workHours
@@ -33,26 +62,67 @@ struct CarParkModel: Identifiable, Codable, Hashable {
         case freeTime
         case district
         case isOpen
+        case isOpened
+        case parkPoint
+        case state
+        case parkDetail
     }
+}
 
-    init(id: UUID = UUID(), parkID: Int = 0, parkName: String = "", latitude: String = "", longitude: String = "", capacity: Int = 0, emptyCapacity: Int = 0, workHours: String = "", parkType: String = "", freeTime: Int = 0, district: String = "", isOpen: Int = 0) {
-        self.id = id
-        self.parkID = parkID
-        self.parkName = parkName
-        self.latitude = latitude
-        self.longitude = longitude
-        self.capacity = capacity
-        self.emptyCapacity = emptyCapacity
-        self.workHours = workHours
-        self.parkType = parkType
-        self.freeTime = freeTime
-        self.district = district
-        self.isOpen = isOpen
+struct CarParkListModel: Codable {
+    let parks: [CarParkModel]
+
+    enum CodingKeys: String, CodingKey {
+        case parks = "parkList"
     }
 }
 
 extension CarParkModel {
     var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: self.latitude.toDouble(), longitude: self.longitude.toDouble())
+        CLLocationCoordinate2D(latitude: self.lat.toDouble(), longitude: self.lng.toDouble())
     }
+}
+
+extension CarParkModel {
+    static let defaultCarPark = CarParkModel(
+        id: 0,
+        parkName: "",
+        lat: "",
+        lng: "",
+        capacity: 0,
+        emptyCapacity: 0,
+        workHours: "",
+        parkType: "",
+        freeTime: 0,
+        district: "",
+        isOpen: 0,
+        isOpened: false,
+        parkPoint: "",
+        state: 0,
+        parkDetail: CarParkDetailModel(
+            id: 0,
+            parkId: 0,
+            updateDate: "",
+            workHours: "",
+            monthlyFee: 0.0,
+            tariff: "",
+            district: "",
+            address: "",
+            areaPolygon: ""
+        )
+    )
+}
+
+extension CarParkDetailModel {
+    static let defaultDetail = CarParkDetailModel(
+        id: 0,
+        parkId: 0,
+        updateDate: "",
+        workHours: "",
+        monthlyFee: 0.0,
+        tariff: "",
+        district: "",
+        address: "",
+        areaPolygon: ""
+    )
 }
