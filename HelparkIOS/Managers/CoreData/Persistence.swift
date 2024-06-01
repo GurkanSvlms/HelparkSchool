@@ -16,6 +16,8 @@ struct PersistenceController {
         for _ in 0..<10 {
             let newItem = SplashEntity(context: viewContext)
             newItem.isFirstTime = Bool(true)
+            
+          
         }
         do {
             try viewContext.save()

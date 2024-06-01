@@ -20,5 +20,22 @@ struct OtpModel: Codable {
 }
 
 struct OtpResponseModel: Codable {
+    let userId: String
+}
+
+
+struct OtpCodeModel: Codable {
+    let phoneNumber: String
+    
+    func toQueryItems() -> [URLQueryItem] {
+        return [
+            URLQueryItem(name: "phoneNumber", value: phoneNumber),
+        ]
+    }
+}
+
+struct OtpCodeResponseModel: Codable {
     let message: String
 }
+
+

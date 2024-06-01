@@ -77,7 +77,7 @@ class WelcomeLoginViewModel: ObservableObject {
                 
                 // Parse JSON response
                 do {
-                    let response = try JSONDecoder().decode(OtpResponseModel.self, from: data)
+                    let response = try JSONDecoder().decode(WelcomeLoginResponseModel.self, from: data)
                     self?.successMessage = response.message
                 } catch {
                     // Log decoding error

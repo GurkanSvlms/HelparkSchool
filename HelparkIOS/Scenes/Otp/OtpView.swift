@@ -10,14 +10,15 @@ import SwiftUI
 struct OtpView: View {
     @StateObject private var viewModel = OtpViewModel()
     @EnvironmentObject var navigationManager: NavigationManager
+    @ObservedObject var coreDataManager = CoreDataManager()
 
     @State private var otpCode: String = ""
     @State private var timer: Int = 60
     @Binding var phoneNumber : String
     
     @State private var showPopup = false
-    @State private var popupTitle = ""
-    @State private var popupSubtitle = ""
+    @State private var popupTitle = "Hata"
+    @State private var popupSubtitle = "Girdiğiniz Kod Yanlıştır, Lütfen Tekrar Deneyiniz"
     
     var maskedPhoneNumber: String {
         let maskedPart = String(phoneNumber.prefix(phoneNumber.count - 4)).replacingOccurrences(of: ".", with: "*")
@@ -26,83 +27,94 @@ struct OtpView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Lütfen \(maskedPhoneNumber) numaralı telefonunuza gönderilen doğrulama kodunu giriniz")
-                    .font(.popSemiboldCallout)
-                    .multilineTextAlignment(.center)
-                    .padding()
-            }
-            OtpFormFieldView(otpCode: $otpCode)
-                .padding()
-
-            HStack {
-                Text("\(timer) Sn")
-                Spacer()
-                Button(action: {
-                    timer = 60
-                }) {
-                    Text("Kodu Tekrar Gönder")
-                        .foregroundColor(Color("#3c7484"))
+        ZStack {
+            VStack {
+                HStack {
+                    Text("Lütfen \(maskedPhoneNumber) numaralı telefonunuza gönderilen doğrulama kodunu giriniz")
+                        .font(.popSemiboldCallout)
+                        .multilineTextAlignment(.center)
+                        .padding()
                 }
-            }
-            .padding(.horizontal, 40)
-            .padding(.top, 12)
-
-            ProgressView(value: Double(60 - timer), total: 60)
-                .progressViewStyle(LinearProgressViewStyle(tint: Color("#3c7484")))
+                OtpFormFieldView(otpCode: $otpCode)
+                    .padding()
+                
+                HStack {
+                    Text("\(timer) Sn")
+                    Spacer()
+                    Button(action: {
+                        viewModel.sendOtp(phoneNumber: phoneNumber)
+                        timer = 60
+                    }) {
+                        Text("Kodu Tekrar Gönder")
+                            .foregroundColor(Color("#3c7484"))
+                    }
+                    .opacity(!(timer == 0) ? 0.5 : 1.0)
+                    .disabled(!(timer == 0))
+                }
                 .padding(.horizontal, 40)
-                .padding(.top, 10)
-
-            Button(action: {
-                if otpCode == "123456" {
-                    viewModel.verifyPhoneNumber(phoneNumber: phoneNumber, otpCode: otpCode)
+                .padding(.top, 12)
+                
+                ProgressView(value: Double(60 - timer), total: 60)
+                    .progressViewStyle(LinearProgressViewStyle(tint: Color("#3c7484")))
+                    .padding(.horizontal, 40)
+                    .padding(.top, 10)
+                
+                Button(action: {
+                    if otpCode == "123456" {
+                        viewModel.verifyPhoneNumber(phoneNumber: phoneNumber, otpCode: otpCode)
+                    }
+                    else {
+                        showPopup = true
+                        otpCode.removeAll()
+                    }
+                }) {
+                    Text("Doğrula")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color("#3c7484"))
+                        .foregroundColor(.white)
+                        .cornerRadius(16)
+                        .padding(.horizontal, 16)
                 }
-            }) {
-                Text("Doğrula")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color("#3c7484"))
-                    .foregroundColor(.white)
-                    .cornerRadius(16)
-                    .padding(.horizontal, 16)
+                .padding(.top, 16)
+                .opacity(otpCode.count < 6 ? 0.5 : 1.0)
+                .disabled(otpCode.count < 6)
+                Spacer()
             }
-            .padding(.top, 16)
-            .opacity(otpCode.count < 6 ? 0.5 : 1.0)
-            .disabled(otpCode.count < 6)
-            Spacer()
-        }
-        .navigationTitle("Doğrulama Kodu")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarItems(leading: CustomBackButtonView())
-        .onChange(of: viewModel.goToNextView, perform: { value in
-            if value {
-                navigationManager.navigate(.home(.home))
+            .navigationTitle("Doğrulama Kodu")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading: CustomBackButtonView())
+            .onAppear {
+                viewModel.sendOtp(phoneNumber: phoneNumber)
             }
-        })
-        .onAppear {
-            startTimer()
-        }
-        .onReceive(viewModel.$error) { error in
-            if let error = error {
-                popupTitle = "Hata"
-                popupSubtitle = error.localizedDescription
-                showPopup = true
-            }
-        }
-        if showPopup {
-            PopupOneButton(
-                title: popupTitle,
-                subtitle: popupSubtitle,
-                buttonText: "Tamam",
-                buttonAction: {
-                    showPopup = false
+            .onChange(of: viewModel.startTimer, perform: { value in
+                if value {
+                    startTimer()
                 }
-            )
+            })
+            .onChange(of: viewModel.goToNextView, perform: { value in
+                if value {
+                    navigationManager.navigate(.home(.home))
+                }
+            })
+            if showPopup {
+                PopupOneButton(
+                    title: popupTitle,
+                    subtitle: popupSubtitle,
+                    buttonText: "Tamam",
+                    buttonAction: {
+                        showPopup = false
+                    }
+                )
+            }
+        }
+        .onDisappear{
+            print(viewModel.userId)
+            coreDataManager.setUserId(userId: viewModel.userId)
         }
     }
-
+    
     func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             if self.timer > 0 {

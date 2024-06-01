@@ -53,4 +53,36 @@ class CoreDataManager : ObservableObject{
             fatalError("Failed to update data: \(error)")
         }
     }
+    
+    func getUserId() -> String {
+        let context = persistentContainer.viewContext
+        let request: NSFetchRequest<UserIdEntity> = UserIdEntity.fetchRequest()
+        do {
+            let results = try context.fetch(request)
+            if let userIdEntity = results.last {
+                return userIdEntity.userId ?? "0"
+            } else {
+                // Varsayılan değer
+                return "0"
+            }
+        } catch let error {
+            print("Failed to fetch data: \(error)")
+            return "0"
+        }
+    }
+
+    
+    func setUserId(userId: String) {
+        let context = persistentContainer.viewContext
+        let request: NSFetchRequest<UserIdEntity> = UserIdEntity.fetchRequest()
+        do {
+            let results = try context.fetch(request)
+            if let userIdEntity = results.first {
+                userIdEntity.userId = userId
+                try context.save()
+            }
+        } catch {
+            fatalError("Failed to update data: \(error)")
+        }
+    }
 }
