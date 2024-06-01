@@ -14,11 +14,11 @@ struct ProfileRouter {
     func configure() -> some View {
         switch routes {
         case .wallet:
-            SettingsView()
+            EmptyView()
         case .myCards:
-            FavoritesView()
+            SavedCardsView()
         case .myCars:
-            AgreementView(agreementMarked: .constant(false), forRegister: .constant(false))
+            EmptyView()
         }
     }
 }

@@ -5,13 +5,6 @@
 //  Created by Ali Gürkan Sevilmis on 1.06.2024.
 //
 
-//
-//  ProfileMenuView.swift
-//  HelparkIOS
-//
-//  Created by Ali Gürkan Sevilmis on 1.06.2024.
-//
-
 import SwiftUI
 
 struct ProfileMenuView: View {

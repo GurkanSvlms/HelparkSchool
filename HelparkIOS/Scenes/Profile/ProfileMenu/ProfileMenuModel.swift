@@ -18,11 +18,16 @@ struct CarModel: Codable {
 }
 
 struct CardModel: Codable {
-    // Card modeline ait alanlar burada tanımlanmalı
     let id: Int
+    let userId: Int
+    let cardName: String
+    let cardAlias: String
     let cardNumber: String
-    let expiryDate: String
-    // Diğer alanlar
+    let cardDate: String
+    let cvv: String
+    let active: String
+    let cardTypeId: Int
+    let description: String
 }
 
 struct UserProfileModel: Codable {
