@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProfileMenuCardView: View {
     
-    @State var userName: String
-    @State var userEmail: String
-    @State var userPhoneNumber: String
+    @Binding var userName: String
+    @Binding var userEmail: String
+    @Binding var userPhoneNumber: String
     
     var body: some View {
         HStack(alignment: .center) {
@@ -39,12 +39,12 @@ struct ProfileMenuCardView: View {
         .padding(12)
         .background(Color.white)
         .cornerRadius(15)
-        .shadow(radius: 5)
+        .shadow(radius: 2)
     }
 }
 
 struct ProfileMenuCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileMenuCardView(userName: "Gürkan Sevilmiş", userEmail: "gurkan@gmail.com", userPhoneNumber: "3948*0409*39")
+        ProfileMenuCardView(userName: .constant("Gürkan Sevilmiş"), userEmail: .constant("gurkan@gmail.com"), userPhoneNumber: .constant("3948*0409*39"))
     }
 }

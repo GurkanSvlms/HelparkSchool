@@ -22,6 +22,8 @@ struct HelparkIOSApp: App {
                         HomeRouter(routes: homeRoutes).configure()
                     case .settings(let settingsRoutes):
                         SettingsRouter(routes: settingsRoutes).configure()
+                    case .profile(let profileRoutes):
+                        ProfileRouter(routes: profileRoutes).configure()
                     }
                 }
             }

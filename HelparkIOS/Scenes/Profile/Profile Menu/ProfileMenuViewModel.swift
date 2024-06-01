@@ -16,14 +16,17 @@ class ProfileMenuViewModel: ObservableObject {
     @Published var userName = ""
     @Published var userEmail = ""
     @Published var userPhoneNumber = ""
+    @Published var userWalletBalance = 0.0
+    @Published var showingError = false
 
     func fetchUserData(userId: String) {
         guard let url = URL(string: "http://212.20.147.23/User/GetAllDataFromUser/\(userId)") else {
             self.errorMessage = "Invalid URL"
             self.error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            self.showingError = true
             return
         }
-        print(url)
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -41,12 +44,14 @@ class ProfileMenuViewModel: ObservableObject {
                 if let error = error {
                     self?.error = error
                     self?.errorMessage = error.localizedDescription
+                    self?.showingError = true
                     return
                 }
                 
                 guard let data = data else {
                     self?.errorMessage = "No data received"
                     self?.error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])
+                    self?.showingError = true
                     return
                 }
                 
@@ -61,7 +66,7 @@ class ProfileMenuViewModel: ObservableObject {
                 if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
                     self?.errorMessage = errorResponse.message
                     self?.error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: errorResponse.message])
-                    print("Error Message: \(errorResponse.message)")
+                    self?.showingError = true
                     return
                 }
                 
@@ -69,13 +74,15 @@ class ProfileMenuViewModel: ObservableObject {
                     // Başarılı veri alma ve decode etme
                     let user = try JSONDecoder().decode(UserProfileModel.self, from: data)
                     self?.user = user
-                    self?.userName = user.name
+                    self?.userName = (user.name + " " + user.surname)
                     self?.userEmail = user.email
                     self?.userPhoneNumber = user.phoneNumber
+                    self?.userWalletBalance = user.balance
                 } catch {
                     // JSON decode edilemedi
                     self?.error = error
                     self?.errorMessage = error.localizedDescription
+                    self?.showingError = true
                     if let jsonString = String(data: data, encoding: .utf8) {
                         print("Failed to decode JSON: \(jsonString)")
                     } else {

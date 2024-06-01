@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct PopupOneButton: View {
+    @Environment(\.presentationMode) var presentationMode
+
     var title: String
     var subtitle: String
     var buttonText: String
+    var showCloseButton = false
     var buttonAction: () -> Void
     
     var body: some View {
@@ -27,19 +30,37 @@ struct PopupOneButton: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
                 
-                Button(action: {
-                    buttonAction()
-                }) {
-                    Text(buttonText)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color("#3c7484"))
-                        .cornerRadius(10)
+                VStack {
+                    Button(action: {
+                        buttonAction()
+                    }) {
+                        Text(buttonText)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .frame(maxWidth: .infinity)
+                            .background(Color("#3c7484"))
+                            .cornerRadius(10)
+                    }
+                    .padding(.top, 20)
+                    
+                    if showCloseButton{
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Text("Kapat")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .frame(maxWidth: .infinity)
+                                .background(Color("#3c7484"))
+                                .cornerRadius(10)
+                        }
+                    }
                 }
-                .padding(.top, 20)
+                .padding(.horizontal)
             }
-            .frame(width: 300, height: 200)
+            .frame(width: 350, height: showCloseButton ? 250 : 200)
             .background(Color.white)
             .cornerRadius(20)
         }
@@ -49,8 +70,8 @@ struct PopupOneButton: View {
     }
 }
 
-//struct PopupOneButton_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PopupOneButton(title: "Konum İzini", subtitle: "Konum izini olmadan uygulamamıza giriş yapılamamaktadır.", buttonText: "Ayarları Aç")
-//    }
-//}
+struct PopupOneButton_Previews: PreviewProvider {
+    static var previews: some View {
+        PopupOneButton(title: "Konum İzini", subtitle: "Konum izini olmadan uygulamamıza giriş yapılamamaktadır.", buttonText: "Ayarları Aç", buttonAction: {})
+    }
+}

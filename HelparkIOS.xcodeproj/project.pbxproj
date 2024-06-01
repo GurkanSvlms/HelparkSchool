@@ -72,6 +72,9 @@
 		DF220B412C0B4E43005209C0 /* ProfileMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B402C0B4E43005209C0 /* ProfileMenuModel.swift */; };
 		DF220B432C0B4E50005209C0 /* ProfileMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B422C0B4E50005209C0 /* ProfileMenuViewModel.swift */; };
 		DF220B452C0B4EEF005209C0 /* ProfileMenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B442C0B4EEF005209C0 /* ProfileMenuCardView.swift */; };
+		DF220B4A2C0B68B8005209C0 /* WalletCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B492C0B68B8005209C0 /* WalletCardView.swift */; };
+		DF220B4C2C0B6D91005209C0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B4B2C0B6D91005209C0 /* LoadingView.swift */; };
+		DF220B4F2C0B6EBA005209C0 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B4E2C0B6EBA005209C0 /* ProfileRouter.swift */; };
 		DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470A82B697B7B009ED739 /* MenuView.swift */; };
 		DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AB2B697FBE009ED739 /* SettingsView.swift */; };
 		DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */; };
@@ -172,6 +175,9 @@
 		DF220B402C0B4E43005209C0 /* ProfileMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuModel.swift; sourceTree = "<group>"; };
 		DF220B422C0B4E50005209C0 /* ProfileMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewModel.swift; sourceTree = "<group>"; };
 		DF220B442C0B4EEF005209C0 /* ProfileMenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuCardView.swift; sourceTree = "<group>"; };
+		DF220B492C0B68B8005209C0 /* WalletCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardView.swift; sourceTree = "<group>"; };
+		DF220B4B2C0B6D91005209C0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		DF220B4E2C0B6EBA005209C0 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		DF3470A82B697B7B009ED739 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DF3470AB2B697FBE009ED739 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
@@ -323,6 +329,7 @@
 			children = (
 				746EEF392B6EBB17007A2BE3 /* HomeRouter.swift */,
 				746EEF3E2B6ECE20007A2BE3 /* SettingsRouter.swift */,
+				DF220B4E2C0B6EBA005209C0 /* ProfileRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -615,6 +622,8 @@
 				DF220B2E2C0A66E9005209C0 /* CheckBoxView.swift */,
 				DF220B3A2C0B47D5005209C0 /* ProfileCardView.swift */,
 				DF220B442C0B4EEF005209C0 /* ProfileMenuCardView.swift */,
+				DF220B492C0B68B8005209C0 /* WalletCardView.swift */,
+				DF220B4B2C0B6D91005209C0 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -778,6 +787,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF220B4F2C0B6EBA005209C0 /* ProfileRouter.swift in Sources */,
 				DF580FEE2B66AF8000A56A35 /* OnboardingStepView.swift in Sources */,
 				746EEF582B6F0E78007A2BE3 /* LottieView.swift in Sources */,
 				746EEF262B6EB501007A2BE3 /* HPRequestType.swift in Sources */,
@@ -846,9 +856,11 @@
 				746EEF4B2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift in Sources */,
 				DF220B312C0A8427005209C0 /* Otp+Modifier.swift in Sources */,
 				DF580FEA2B66AF8000A56A35 /* HomeView.swift in Sources */,
+				DF220B4C2C0B6D91005209C0 /* LoadingView.swift in Sources */,
 				DF220B412C0B4E43005209C0 /* ProfileMenuModel.swift in Sources */,
 				DF220B2F2C0A66E9005209C0 /* CheckBoxView.swift in Sources */,
 				DF580FCC2B66AE0200A56A35 /* HelparkIOSApp.swift in Sources */,
+				DF220B4A2C0B68B8005209C0 /* WalletCardView.swift in Sources */,
 				7448A9BD2B7001D500BE9730 /* HPUserDefaultsManager.swift in Sources */,
 				DF580FF82B66AF8B00A56A35 /* PopupOneButton.swift in Sources */,
 			);
