@@ -19,16 +19,9 @@ class RegisterViewModel: ObservableObject {
         // Create the model
         let user = RegisterModel(name: name, surname: surname, email: email, phoneNumber: phoneNumber)
         
-        // Convert model to parameters
-        let parameters: [String: Any] = [
-            "name": user.name,
-            "surname": user.surname,
-            "email": user.email,
-            "phoneNumber": user.phoneNumber
-        ]
         
-        // Serialize parameters to JSON
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: parameters) else {
+        // Serialize model to JSON
+        guard let jsonData = try? JSONEncoder().encode(user) else {
             self.error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid parameters"])
             return
         }

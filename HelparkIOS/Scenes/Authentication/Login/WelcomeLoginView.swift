@@ -9,9 +9,14 @@ import SwiftUI
 
 struct WelcomeLoginView: View {
     @EnvironmentObject var navigationManager: NavigationManager
-    @State private var passwordText = ""
-    
+    @State private var phoneNumber = ""
+    @State private var goToOtpView = false
     var body: some View {
+        
+        NavigationLink(
+            destination: OtpView(phoneNumber: $phoneNumber),
+            isActive: $goToOtpView)
+        { EmptyView() }
         
         VStack(alignment: .center){
             Image("helpark_title")
@@ -19,7 +24,7 @@ struct WelcomeLoginView: View {
                 .frame(width: 300,height: 90)
             
             ValidationTextField(
-                text: $passwordText,
+                text: $phoneNumber,
                 placeholder: "Telefon Numaranız",
                 fontColor: Color("#3c7484"))
             .padding(.top, 24)
@@ -33,7 +38,7 @@ struct WelcomeLoginView: View {
                 Spacer()
             }
             Button(action: {
-                
+                goToOtpView = true
             }) {
                 Text("Giriş Yap")
                     .font(.headline)
@@ -44,8 +49,8 @@ struct WelcomeLoginView: View {
                     .cornerRadius(16)
             }
             .padding(.top, 20)
-            .opacity(passwordText.isEmpty ? 0.5 : 1.0)
-            .disabled(passwordText.isEmpty)
+            .opacity(phoneNumber.isEmpty ? 0.5 : 1.0)
+            .disabled(phoneNumber.isEmpty)
             
             Text("Kayıt Ol")
                 .foregroundColor(.black)

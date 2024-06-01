@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct OtpView: View {
+    @StateObject private var viewModel = OtpViewModel()
+    @EnvironmentObject var navigationManager: NavigationManager
+
     @State private var otpCode: String = ""
     @State private var timer: Int = 60
     @Binding var phoneNumber : String
+    
+    @State private var showPopup = false
+    @State private var popupTitle = ""
+    @State private var popupSubtitle = ""
     
     var maskedPhoneNumber: String {
         let maskedPart = String(phoneNumber.prefix(phoneNumber.count - 4)).replacingOccurrences(of: ".", with: "*")
@@ -22,37 +29,18 @@ struct OtpView: View {
         VStack {
             HStack {
                 Text("Lütfen \(maskedPhoneNumber) numaralı telefonunuza gönderilen doğrulama kodunu giriniz")
-
                     .font(.popSemiboldCallout)
                     .multilineTextAlignment(.center)
                     .padding()
             }
-            HStack(spacing: 10) {
-                ForEach(0..<6) { index in
-                    TextField("", text: Binding(
-                        get: {
-                            let otpArray = Array(otpCode)
-                            return index < otpArray.count ? String(otpArray[index]) : ""
-                        },
-                        set: { newValue in
-                            if newValue.count <= 1 && otpCode.count < 6 {
-                                otpCode.append(newValue)
-                            }
-                        }
-                    ))
-                    .frame(width: 50, height: 50)
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(12)
-                    .multilineTextAlignment(.center)
-                    .keyboardType(.numberPad)
-                }
-            }
-            .padding()
+            OtpFormFieldView(otpCode: $otpCode)
+                .padding()
+
             HStack {
                 Text("\(timer) Sn")
                 Spacer()
                 Button(action: {
-                    // Kod tekrar gönderme işlemi
+                    timer = 60
                 }) {
                     Text("Kodu Tekrar Gönder")
                         .foregroundColor(Color("#3c7484"))
@@ -60,14 +48,16 @@ struct OtpView: View {
             }
             .padding(.horizontal, 40)
             .padding(.top, 12)
-            
+
             ProgressView(value: Double(60 - timer), total: 60)
                 .progressViewStyle(LinearProgressViewStyle(tint: Color("#3c7484")))
                 .padding(.horizontal, 40)
                 .padding(.top, 10)
-            
+
             Button(action: {
-                // Doğrulama işlemi
+                if otpCode == "123456" {
+                    viewModel.verifyPhoneNumber(phoneNumber: phoneNumber, otpCode: otpCode)
+                }
             }) {
                 Text("Doğrula")
                     .frame(maxWidth: .infinity)
@@ -78,16 +68,41 @@ struct OtpView: View {
                     .padding(.horizontal, 16)
             }
             .padding(.top, 16)
+            .opacity(otpCode.count < 6 ? 0.5 : 1.0)
+            .disabled(otpCode.count < 6)
             Spacer()
         }
         .navigationTitle("Doğrulama Kodu")
         .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(leading: CustomBackButtonView())
+        .onChange(of: viewModel.goToNextView, perform: { value in
+            if value {
+                navigationManager.navigate(.home(.home))
+            }
+        })
         .onAppear {
             startTimer()
         }
+        .onReceive(viewModel.$error) { error in
+            if let error = error {
+                popupTitle = "Hata"
+                popupSubtitle = error.localizedDescription
+                showPopup = true
+            }
+        }
+        if showPopup {
+            PopupOneButton(
+                title: popupTitle,
+                subtitle: popupSubtitle,
+                buttonText: "Tamam",
+                buttonAction: {
+                    showPopup = false
+                }
+            )
+        }
     }
-    
+
     func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             if self.timer > 0 {
