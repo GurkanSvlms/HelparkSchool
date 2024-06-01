@@ -80,6 +80,8 @@
 		DF220B5D2C0B93D2005209C0 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B5C2C0B93D2005209C0 /* AddCardView.swift */; };
 		DF220B5F2C0B93DB005209C0 /* AddCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B5E2C0B93DB005209C0 /* AddCardModel.swift */; };
 		DF220B612C0B93E6005209C0 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B602C0B93E6005209C0 /* AddCardViewModel.swift */; };
+		DF220B632C0BB4A3005209C0 /* SavedCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B622C0BB4A3005209C0 /* SavedCardViewModel.swift */; };
+		DF220B652C0BB4B3005209C0 /* SavedCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B642C0BB4B3005209C0 /* SavedCardModel.swift */; };
 		DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470A82B697B7B009ED739 /* MenuView.swift */; };
 		DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AB2B697FBE009ED739 /* SettingsView.swift */; };
 		DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */; };
@@ -188,6 +190,8 @@
 		DF220B5C2C0B93D2005209C0 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		DF220B5E2C0B93DB005209C0 /* AddCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardModel.swift; sourceTree = "<group>"; };
 		DF220B602C0B93E6005209C0 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		DF220B622C0BB4A3005209C0 /* SavedCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardViewModel.swift; sourceTree = "<group>"; };
+		DF220B642C0BB4B3005209C0 /* SavedCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardModel.swift; sourceTree = "<group>"; };
 		DF3470A82B697B7B009ED739 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DF3470AB2B697FBE009ED739 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
@@ -476,8 +480,8 @@
 		DF220B522C0B83F4005209C0 /* SavedCards */ = {
 			isa = PBXGroup;
 			children = (
+				DF220B662C0BB4B7005209C0 /* Cards */,
 				DF220B5B2C0B93BF005209C0 /* AddCard */,
-				DF220B532C0B8415005209C0 /* SavedCardsView.swift */,
 			);
 			path = SavedCards;
 			sourceTree = "<group>";
@@ -490,6 +494,16 @@
 				DF220B602C0B93E6005209C0 /* AddCardViewModel.swift */,
 			);
 			path = AddCard;
+			sourceTree = "<group>";
+		};
+		DF220B662C0BB4B7005209C0 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				DF220B532C0B8415005209C0 /* SavedCardsView.swift */,
+				DF220B622C0BB4A3005209C0 /* SavedCardViewModel.swift */,
+				DF220B642C0BB4B3005209C0 /* SavedCardModel.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 		DF3470AA2B697FAC009ED739 /* Settings */ = {
@@ -832,6 +846,7 @@
 				746EEF3A2B6EBB17007A2BE3 /* HomeRouter.swift in Sources */,
 				746EEF362B6EBADA007A2BE3 /* Routes.swift in Sources */,
 				7448A98B2B6FA19400BE9730 /* Strings.swift in Sources */,
+				DF220B632C0BB4A3005209C0 /* SavedCardViewModel.swift in Sources */,
 				DF580FED2B66AF8000A56A35 /* SplashView.swift in Sources */,
 				DFB8EBAE2C0912280020FED1 /* OtpModel.swift in Sources */,
 				DFB8EBAC2C0912200020FED1 /* OtpViewModel.swift in Sources */,
@@ -840,6 +855,7 @@
 				DF5810062B66AF8F00A56A35 /* CoreDataManager.swift in Sources */,
 				DFB8EBB22C0921C90020FED1 /* RegisterViewModel.swift in Sources */,
 				DF5810052B66AF8F00A56A35 /* LocationManager.swift in Sources */,
+				DF220B652C0BB4B3005209C0 /* SavedCardModel.swift in Sources */,
 				DF220B542C0B8415005209C0 /* SavedCardsView.swift in Sources */,
 				746EEF5E2B6F1176007A2BE3 /* VisualEffectView.swift in Sources */,
 				7448A96F2B6F8AC400BE9730 /* PriceTableView.swift in Sources */,

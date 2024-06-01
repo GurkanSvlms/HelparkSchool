@@ -42,26 +42,28 @@ struct ProfileMenuView: View {
                     }
                 }
             }
-            .navigationTitle("Profil Bilgilerim")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: CustomBackButtonView())
-            .onAppear{
-                do {
-                    try
-                    viewModel.fetchUserData(userId: HPUserDefaultsManager.shared.getModel(.userID, String.self))
-                } catch {
-                    print(HPUserDefaultsError.encodingFailed.localizedDescription)
-                }
-            }
             if showLogoutPopup{
-                PopupOneButton(title: "Çıkış Yap", subtitle: "Çıkış yapmak istiyor musun?", buttonText: "Çıkış Yap",showCloseButton: true) {
+                PopupOneButton(showPopup: $showLogoutPopup,
+                               title: "Çıkış Yap",
+                               subtitle: "Çıkış yapmak istiyor musun?",
+                               buttonText: "Çıkış Yap",
+                               showCloseButton: true) {
                     navigationManager.popToRoot()
                 }
-                
             }
         }
         .padding(.horizontal)
+        .navigationTitle("Profil Bilgilerim")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: CustomBackButtonView())
+        .onAppear{
+            do {
+                try viewModel.fetchUserData(userId:  HPUserDefaultsManager.shared.getModel(.userID, String.self))
+            } catch {
+                print(HPUserDefaultsError.encodingFailed.localizedDescription)
+            }
+        }
     }
     private func handleMenuItemTap(item: MenuModel) {
         switch item.title {

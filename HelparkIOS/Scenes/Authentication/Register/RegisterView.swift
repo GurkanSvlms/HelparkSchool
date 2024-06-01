@@ -115,6 +115,7 @@ struct RegisterView: View {
         }
         if showPopup {
             PopupOneButton(
+                showPopup: $showPopup,
                 title: popupTitle,
                 subtitle: popupSubtitle,
                 buttonText: "Tamam",

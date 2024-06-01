@@ -32,6 +32,7 @@ struct SplashView: View {
             }
             if !isLocation {
                 PopupOneButton(
+                    showPopup: .constant(!isLocation),
                     title: "Konum",
                     subtitle: "Konum olmadan uygulamamıza giriş yapılamamaktadır.",
                     buttonText: "Ayarları Aç"

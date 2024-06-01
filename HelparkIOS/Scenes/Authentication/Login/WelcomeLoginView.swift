@@ -84,6 +84,7 @@ struct WelcomeLoginView: View {
             }
             if viewModel.showErrorPopup {
                 PopupOneButton(
+                    showPopup: $viewModel.showErrorPopup,
                     title: popupTitle,
                     subtitle: popupSubtitle,
                     buttonText: "Tamam",
