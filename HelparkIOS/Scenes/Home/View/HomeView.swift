@@ -18,7 +18,7 @@ struct HomeView: View {
         ZStack {
             mapView
             VStack {
-                SearchBarView(searchText: $viewModel.searchText)
+                ProfileCardView()
                 Spacer()
                 homeButtons
             }
@@ -49,11 +49,6 @@ struct HomeView: View {
         HStack {
             Spacer()
             VStack {
-                Button {
-                    navigationManager.navigate(.settings(.settings))
-                } label: {
-                    HPSquareButton(image: Image("homeMenu"))
-                }
                 Button {
                     tapMyLocationAction()
                 } label: {
