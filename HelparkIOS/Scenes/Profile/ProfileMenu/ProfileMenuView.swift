@@ -46,7 +46,6 @@ struct ProfileMenuView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CustomBackButtonView())
-            .padding(.horizontal)
             .onAppear{
                 do {
                     try
@@ -57,11 +56,12 @@ struct ProfileMenuView: View {
             }
             if showLogoutPopup{
                 PopupOneButton(title: "Çıkış Yap", subtitle: "Çıkış yapmak istiyor musun?", buttonText: "Çıkış Yap",showCloseButton: true) {
-
+                    navigationManager.popToRoot()
                 }
                 
             }
         }
+        .padding(.horizontal)
     }
     private func handleMenuItemTap(item: MenuModel) {
         switch item.title {

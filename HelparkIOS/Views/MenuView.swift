@@ -42,24 +42,23 @@ struct MenuView: View {
                         .resizable()
                         .renderingMode(.template)
                         .frame(width: 24, height: 24)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("#3c7484"))
                 }
                    
                 Text(item.title)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("#3c7484"))
                     .multilineTextAlignment(.leading)
                 Spacer()
                 Image("right_arrow")
                     .resizable()
+                    .renderingMode(.template)
                     .frame(width: 18, height: 18)
+                    .foregroundColor(Color("#3c7484"))
             }
-            .padding(.horizontal, 16)
-            .frame(height: 48)
-            .cornerRadius(12)
-            if !isLastItem{
-                Divider()
-                    .padding(.horizontal)
-            }
+            .padding(12)
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(radius: 2)
         }
     }
 
@@ -68,7 +67,5 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView(item: MenuModel(title: "Sample Item", iconName: "myLocation", isLastItem: false, action: nil), isLastItem: false)
-           
-            .background(Color.gray)
     }
 }

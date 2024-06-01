@@ -19,6 +19,8 @@ struct ProfileRouter {
             SavedCardsView()
         case .myCars:
             EmptyView()
+        case .addCard:
+            AddCardView()
         }
     }
 }
@@ -27,4 +29,5 @@ enum ProfileRoutes: Hashable {
     case wallet
     case myCards
     case myCars
+    case addCard
 }

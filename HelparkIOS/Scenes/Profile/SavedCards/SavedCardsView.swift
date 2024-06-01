@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SavedCardsView: View {
     @StateObject var viewModel = ProfileMenuViewModel()
+    @EnvironmentObject var navigationManager: NavigationManager
 
     var body: some View {
         VStack {
@@ -18,7 +19,7 @@ struct SavedCardsView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    navigationManager.navigate(.profile(.addCard))
                 }) {
                     Text("Kart Ekle")
                         .font(.headline)

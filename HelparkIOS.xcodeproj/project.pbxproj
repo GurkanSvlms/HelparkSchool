@@ -77,6 +77,9 @@
 		DF220B4F2C0B6EBA005209C0 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B4E2C0B6EBA005209C0 /* ProfileRouter.swift */; };
 		DF220B542C0B8415005209C0 /* SavedCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B532C0B8415005209C0 /* SavedCardsView.swift */; };
 		DF220B5A2C0B8497005209C0 /* CardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B592C0B8497005209C0 /* CardItemView.swift */; };
+		DF220B5D2C0B93D2005209C0 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B5C2C0B93D2005209C0 /* AddCardView.swift */; };
+		DF220B5F2C0B93DB005209C0 /* AddCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B5E2C0B93DB005209C0 /* AddCardModel.swift */; };
+		DF220B612C0B93E6005209C0 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B602C0B93E6005209C0 /* AddCardViewModel.swift */; };
 		DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470A82B697B7B009ED739 /* MenuView.swift */; };
 		DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AB2B697FBE009ED739 /* SettingsView.swift */; };
 		DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */; };
@@ -182,6 +185,9 @@
 		DF220B4E2C0B6EBA005209C0 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		DF220B532C0B8415005209C0 /* SavedCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardsView.swift; sourceTree = "<group>"; };
 		DF220B592C0B8497005209C0 /* CardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemView.swift; sourceTree = "<group>"; };
+		DF220B5C2C0B93D2005209C0 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		DF220B5E2C0B93DB005209C0 /* AddCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardModel.swift; sourceTree = "<group>"; };
+		DF220B602C0B93E6005209C0 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
 		DF3470A82B697B7B009ED739 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DF3470AB2B697FBE009ED739 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
@@ -470,9 +476,20 @@
 		DF220B522C0B83F4005209C0 /* SavedCards */ = {
 			isa = PBXGroup;
 			children = (
+				DF220B5B2C0B93BF005209C0 /* AddCard */,
 				DF220B532C0B8415005209C0 /* SavedCardsView.swift */,
 			);
 			path = SavedCards;
+			sourceTree = "<group>";
+		};
+		DF220B5B2C0B93BF005209C0 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				DF220B5C2C0B93D2005209C0 /* AddCardView.swift */,
+				DF220B5E2C0B93DB005209C0 /* AddCardModel.swift */,
+				DF220B602C0B93E6005209C0 /* AddCardViewModel.swift */,
+			);
+			path = AddCard;
 			sourceTree = "<group>";
 		};
 		DF3470AA2B697FAC009ED739 /* Settings */ = {
@@ -829,6 +846,7 @@
 				746EEF3F2B6ECE20007A2BE3 /* SettingsRouter.swift in Sources */,
 				746EEF4D2B6EEE53007A2BE3 /* CarParkDetailModel.swift in Sources */,
 				DF220B432C0B4E50005209C0 /* ProfileMenuViewModel.swift in Sources */,
+				DF220B612C0B93E6005209C0 /* AddCardViewModel.swift in Sources */,
 				DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */,
 				746EEF382B6EBAED007A2BE3 /* NavigationManager.swift in Sources */,
 				DF580FEF2B66AF8000A56A35 /* OnboardingView.swift in Sources */,
@@ -838,6 +856,7 @@
 				746EEF512B6F08C5007A2BE3 /* View+Extension.swift in Sources */,
 				DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */,
 				746EEF2E2B6EB735007A2BE3 /* HPNetworkParameters.swift in Sources */,
+				DF220B5D2C0B93D2005209C0 /* AddCardView.swift in Sources */,
 				746EEF242B6EB4F4007A2BE3 /* HPNetworkError.swift in Sources */,
 				7448A9BF2B70024700BE9730 /* HPUserDefaultsKey.swift in Sources */,
 				DFB8EBB02C0921C00020FED1 /* RegisterView.swift in Sources */,
@@ -849,6 +868,7 @@
 				7448A9C12B70026D00BE9730 /* HPUserDefaultsError.swift in Sources */,
 				7448A9C42B700C1800BE9730 /* FavoritesView.swift in Sources */,
 				DF3A04C12B70397F00CF7D7C /* WebView.swift in Sources */,
+				DF220B5F2C0B93DB005209C0 /* AddCardModel.swift in Sources */,
 				DF220B372C0B1559005209C0 /* WelcomeLoginViewModel.swift in Sources */,
 				DF580FEB2B66AF8000A56A35 /* CarParkModel.swift in Sources */,
 				DFA690502C06092800186754 /* WelcomeLoginView.swift in Sources */,
