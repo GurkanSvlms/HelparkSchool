@@ -40,7 +40,7 @@ struct CarPlatesView: View {
                     Button(action: {
                         navigationManager.navigate(.profile(.addCard))
                     }) {
-                        Text("Kart Ekle")
+                        Text("Plaka Ekle")
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 330)
@@ -50,7 +50,7 @@ struct CarPlatesView: View {
                     }
                 }
             }
-            .navigationTitle("Kayıtlı Kartlarım")
+            .navigationTitle("Kayıtlı Araçlarım")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CustomBackButtonView())
@@ -78,8 +78,8 @@ struct CarPlatesView: View {
             if showDeletePopup {
                 PopupOneButton(
                     showPopup: $showDeletePopup,
-                    title: "Kart Silme",
-                    subtitle: "Kart Silme İşlemini Onaylıyor musunuz",
+                    title: "Plaka Silme",
+                    subtitle: "Plaka Silme İşlemini Onaylıyor musunuz",
                     buttonText: "Evet",
                     showCloseButton: true) {
                         if let userIdString = try? HPUserDefaultsManager.shared.getModel(.userID, String.self),
@@ -95,6 +95,6 @@ struct CarPlatesView: View {
 
 struct CarPlatesView_Previews: PreviewProvider {
     static var previews: some View {
-        SavedCardsView()
+        CarPlatesView()
     }
 }
