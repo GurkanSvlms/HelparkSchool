@@ -7,12 +7,36 @@
 
 import Foundation
 
-struct CarModel: Codable {
+enum FuelType: Int, Codable {
+    case gasoline = 1
+    case diesel = 2
+    case electric = 3
+    case hybrid = 4
+    case lpg = 5
+    case cng = 6
+    case hydrogen = 7
+    case unknown = 0
+
+    var description: String {
+        switch self {
+        case .gasoline: return "Benzin"
+        case .diesel: return "Dizel"
+        case .electric: return "Elektrik"
+        case .hybrid: return "Hibrit"
+        case .lpg: return "LPG"
+        case .cng: return "CNG"
+        case .hydrogen: return "Hidrojen"
+        case .unknown: return "Unknown"
+        }
+    }
+}
+
+struct CarPlate: Codable {
     let id: Int
     let userId: Int
     let plate: String
     let model: String
-    let fuelTypeId: Int
+    let fuelTypeId: FuelType
     let description: String
     let active: Int
 }
@@ -39,7 +63,7 @@ struct UserProfileModel: Codable {
     let debt: Double
     let balance: Double
     let active: Int
-    let carPlates: [CarModel]
+    let carPlates: [CarPlate]
     let card: [CardModel]
 }
 

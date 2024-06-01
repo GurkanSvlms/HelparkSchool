@@ -16,7 +16,7 @@ struct ProfileMenuView: View {
     let menuItems: [MenuModel] = [
         MenuModel(title: "Kartlarım", iconName: "card"),
         MenuModel(title: "Araçlarım", iconName: "car"),
-        MenuModel(title: "Çıkış Yap", iconName: "logout", isLastItem: true)
+        MenuModel(title: "Çıkış Yap", iconName: "logout")
     ]
     
     var body: some View {
