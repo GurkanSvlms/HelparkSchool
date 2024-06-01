@@ -14,9 +14,9 @@ struct ProfileMenuView: View {
     
     @State private var showLogoutPopup = false
     let menuItems: [MenuModel] = [
-        MenuModel(title: "Kartlarım", iconName: "save"),
-        MenuModel(title: "Araçlarım", iconName: "about"),
-        MenuModel(title: "Çıkış Yap", iconName: "question", isLastItem: true)
+        MenuModel(title: "Kartlarım", iconName: "card"),
+        MenuModel(title: "Araçlarım", iconName: "car"),
+        MenuModel(title: "Çıkış Yap", iconName: "logout", isLastItem: true)
     ]
     
     var body: some View {

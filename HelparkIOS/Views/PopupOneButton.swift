@@ -19,7 +19,11 @@ struct PopupOneButton: View {
     
     var body: some View {
         ZStack {
-            Color.gray.opacity(0.3).edgesIgnoringSafeArea(.all)
+            // Background overlay with blur effect
+            Color.black.opacity(0.4)
+                .edgesIgnoringSafeArea(.all)
+                .blur(radius: 10)
+            
             VStack {
                 Text(title)
                     .font(.title)
@@ -59,20 +63,33 @@ struct PopupOneButton: View {
                             .cornerRadius(10)
                     }
                 }
+                .padding(.top, 20)
             }
-            .padding(.horizontal)
-        }
-        .frame(width: 350, height: showCloseButton ? 250 : 200)
-        .background(Color.white)
-        .cornerRadius(20)
-        .onAppear{
-            hideKeyboard()
+            .padding()
+            .frame(width: 350, height: showCloseButton ? 250 : 200)
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 10)
+            .onAppear {
+                hideKeyboard()
+            }
         }
     }
 }
 
 struct PopupOneButton_Previews: PreviewProvider {
     static var previews: some View {
-        PopupOneButton(showPopup: .constant(false), title: "Konum İzini", subtitle: "Konum izini olmadan uygulamamıza giriş yapılamamaktadır.", buttonText: "Ayarları Aç", buttonAction: {})
+        PopupOneButton(
+            showPopup: .constant(true),
+            title: "Konum İzini",
+            subtitle: "Konum izini olmadan uygulamamıza giriş yapılamamaktadır.",
+            buttonText: "Ayarları Aç",showCloseButton: true,
+            buttonAction: {}
+        )
     }
+}
+
+// Hide keyboard function
+func hideKeyboard() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }
