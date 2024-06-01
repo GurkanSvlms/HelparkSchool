@@ -68,6 +68,10 @@
 		DF220B372C0B1559005209C0 /* WelcomeLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B362C0B1559005209C0 /* WelcomeLoginViewModel.swift */; };
 		DF220B392C0B1A56005209C0 /* Keyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B382C0B1A56005209C0 /* Keyboard+Extension.swift */; };
 		DF220B3B2C0B47D5005209C0 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B3A2C0B47D5005209C0 /* ProfileCardView.swift */; };
+		DF220B3F2C0B4E39005209C0 /* ProfileMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B3E2C0B4E39005209C0 /* ProfileMenuView.swift */; };
+		DF220B412C0B4E43005209C0 /* ProfileMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B402C0B4E43005209C0 /* ProfileMenuModel.swift */; };
+		DF220B432C0B4E50005209C0 /* ProfileMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B422C0B4E50005209C0 /* ProfileMenuViewModel.swift */; };
+		DF220B452C0B4EEF005209C0 /* ProfileMenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B442C0B4EEF005209C0 /* ProfileMenuCardView.swift */; };
 		DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470A82B697B7B009ED739 /* MenuView.swift */; };
 		DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AB2B697FBE009ED739 /* SettingsView.swift */; };
 		DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */; };
@@ -164,6 +168,10 @@
 		DF220B362C0B1559005209C0 /* WelcomeLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewModel.swift; sourceTree = "<group>"; };
 		DF220B382C0B1A56005209C0 /* Keyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+Extension.swift"; sourceTree = "<group>"; };
 		DF220B3A2C0B47D5005209C0 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
+		DF220B3E2C0B4E39005209C0 /* ProfileMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuView.swift; sourceTree = "<group>"; };
+		DF220B402C0B4E43005209C0 /* ProfileMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuModel.swift; sourceTree = "<group>"; };
+		DF220B422C0B4E50005209C0 /* ProfileMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewModel.swift; sourceTree = "<group>"; };
+		DF220B442C0B4EEF005209C0 /* ProfileMenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuCardView.swift; sourceTree = "<group>"; };
 		DF3470A82B697B7B009ED739 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DF3470AB2B697FBE009ED739 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
@@ -429,6 +437,24 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		DF220B3C2C0B4DF1005209C0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DF220B3D2C0B4DFA005209C0 /* Profile Menu */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DF220B3D2C0B4DFA005209C0 /* Profile Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DF220B3E2C0B4E39005209C0 /* ProfileMenuView.swift */,
+				DF220B402C0B4E43005209C0 /* ProfileMenuModel.swift */,
+				DF220B422C0B4E50005209C0 /* ProfileMenuViewModel.swift */,
+			);
+			path = "Profile Menu";
+			sourceTree = "<group>";
+		};
 		DF3470AA2B697FAC009ED739 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +556,7 @@
 		DF580FE02B66AF8000A56A35 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DF220B3C2C0B4DF1005209C0 /* Profile */,
 				DFB8EBA82C0911D60020FED1 /* Otp */,
 				DF0382BC2BE0078300404EC6 /* Authentication */,
 				DF3A04BC2B70343E00CF7D7C /* About */,
@@ -587,6 +614,7 @@
 				DFA690552C0609BC00186754 /* ValidationTextField.swift */,
 				DF220B2E2C0A66E9005209C0 /* CheckBoxView.swift */,
 				DF220B3A2C0B47D5005209C0 /* ProfileCardView.swift */,
+				DF220B442C0B4EEF005209C0 /* ProfileMenuCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -753,6 +781,7 @@
 				DF580FEE2B66AF8000A56A35 /* OnboardingStepView.swift in Sources */,
 				746EEF582B6F0E78007A2BE3 /* LottieView.swift in Sources */,
 				746EEF262B6EB501007A2BE3 /* HPRequestType.swift in Sources */,
+				DF220B3F2C0B4E39005209C0 /* ProfileMenuView.swift in Sources */,
 				DF220B332C0A9BF1005209C0 /* OtpFormFieldView.swift in Sources */,
 				746EEF672B6F1314007A2BE3 /* CarParkDetailView.swift in Sources */,
 				DF3A04BF2B70345300CF7D7C /* AboutView.swift in Sources */,
@@ -774,6 +803,7 @@
 				7448A96F2B6F8AC400BE9730 /* PriceTableView.swift in Sources */,
 				746EEF3F2B6ECE20007A2BE3 /* SettingsRouter.swift in Sources */,
 				746EEF4D2B6EEE53007A2BE3 /* CarParkDetailModel.swift in Sources */,
+				DF220B432C0B4E50005209C0 /* ProfileMenuViewModel.swift in Sources */,
 				DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */,
 				746EEF382B6EBAED007A2BE3 /* NavigationManager.swift in Sources */,
 				DF580FEF2B66AF8000A56A35 /* OnboardingView.swift in Sources */,
@@ -786,6 +816,7 @@
 				746EEF242B6EB4F4007A2BE3 /* HPNetworkError.swift in Sources */,
 				7448A9BF2B70024700BE9730 /* HPUserDefaultsKey.swift in Sources */,
 				DFB8EBB02C0921C00020FED1 /* RegisterView.swift in Sources */,
+				DF220B452C0B4EEF005209C0 /* ProfileMenuCardView.swift in Sources */,
 				DF580FF92B66AF8B00A56A35 /* SearchBarView.swift in Sources */,
 				DFB8EBB42C0921D30020FED1 /* RegisterModel.swift in Sources */,
 				746EEF322B6EB815007A2BE3 /* CarParkNetworkManager.swift in Sources */,
@@ -815,6 +846,7 @@
 				746EEF4B2B6EED1E007A2BE3 /* CarParkDetailViewModel.swift in Sources */,
 				DF220B312C0A8427005209C0 /* Otp+Modifier.swift in Sources */,
 				DF580FEA2B66AF8000A56A35 /* HomeView.swift in Sources */,
+				DF220B412C0B4E43005209C0 /* ProfileMenuModel.swift in Sources */,
 				DF220B2F2C0A66E9005209C0 /* CheckBoxView.swift in Sources */,
 				DF580FCC2B66AE0200A56A35 /* HelparkIOSApp.swift in Sources */,
 				7448A9BD2B7001D500BE9730 /* HPUserDefaultsManager.swift in Sources */,

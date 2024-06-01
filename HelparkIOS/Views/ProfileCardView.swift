@@ -18,6 +18,9 @@ struct ProfileCardView: View {
                     .frame(width: 50, height: 50)
                     .clipShape(Circle())
                     .foregroundColor(Color("#3c7484"))
+                    .onTapGesture {
+                        navigationManager.navigate(.home(.profile))
+                    }
                 
                 VStack(alignment: .leading) {
                     Text("Hoşgeldin")

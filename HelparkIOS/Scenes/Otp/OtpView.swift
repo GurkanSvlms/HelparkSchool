@@ -10,7 +10,6 @@ import SwiftUI
 struct OtpView: View {
     @StateObject private var viewModel = OtpViewModel()
     @EnvironmentObject var navigationManager: NavigationManager
-    @ObservedObject var coreDataManager = CoreDataManager()
 
     @State private var otpCode: String = ""
     @State private var timer: Int = 60
@@ -110,8 +109,11 @@ struct OtpView: View {
             }
         }
         .onDisappear{
-            print(viewModel.userId)
-            coreDataManager.setUserId(userId: viewModel.userId)
+            do {
+                try HPUserDefaultsManager.shared.setModel(key: .userID, model: viewModel.userId)
+            } catch {
+                print(HPUserDefaultsError.encodingFailed.localizedDescription)
+            }
         }
     }
     

@@ -3,7 +3,4 @@
     <entity name="SplashEntity" representedClassName="SplashEntity" syncable="YES" codeGenerationType="class">
         <attribute name="isFirstTime" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
     </entity>
-    <entity name="UserIdEntity" representedClassName="UserIdEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="userId" optional="YES" attributeType="String"/>
-    </entity>
 </model>

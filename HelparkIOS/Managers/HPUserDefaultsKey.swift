@@ -9,6 +9,7 @@ import Foundation
 
 enum HPUserDefaultsKey: String, CaseIterable {
     case favoriteCarParks
+    case userID
 
     var value: String {
         return rawValue

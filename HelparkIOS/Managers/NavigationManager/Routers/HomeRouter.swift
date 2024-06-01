@@ -21,6 +21,8 @@ struct HomeRouter {
             WelcomeLoginView()
         case .register:
             RegisterView()
+        case .profile:
+            ProfileMenuView()
         }
     }
 }
@@ -30,4 +32,5 @@ enum HomeRoutes: Hashable {
     case home
     case login
     case register
+    case profile
 }
