@@ -21,7 +21,7 @@ struct SettingsView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: UI.Spacing.p0) {
+            VStack(spacing: 8) {
                 ForEach(menuItems) { item in
                     Button {
                         switch item.action {
@@ -44,8 +44,8 @@ struct SettingsView: View {
             }
         }
         .scrollIndicators(.hidden)
-        .padding(.vertical)
         .navigationBarTitle(Strings.settingTitle)
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButtonView())
         

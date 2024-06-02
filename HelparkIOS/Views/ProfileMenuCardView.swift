@@ -14,32 +14,35 @@ struct ProfileMenuCardView: View {
     @Binding var userPhoneNumber: String
     
     var body: some View {
-        HStack(alignment: .center) {
-            Image("userPhoto")
-                .resizable()
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
-                .foregroundColor(Color("#3c7484"))
-            
-            VStack(alignment: .leading, spacing: 0) {
-                Text(userName)
-                    .font(.popBoldTitle3)
+        VStack {
+            HStack(alignment: .center) {
+                Image("userPhoto")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+                    .foregroundColor(Color("#3c7484"))
                 
-                Text(userEmail)
-                    .font(.popMediumSubheadline)
-                    .foregroundColor(.gray)
-                
-                Text(userPhoneNumber)
-                    .font(.popMediumSubheadline)
-                    .foregroundColor(.gray)
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(userName)
+                        .font(.popBoldTitle3)
+                    
+                    Text(userEmail)
+                        .font(.popMediumSubheadline)
+                        .foregroundColor(.gray)
+                    
+                    Text(userPhoneNumber)
+                        .font(.popMediumSubheadline)
+                        .foregroundColor(.gray)
+                }
+                .padding(.horizontal)
+                Spacer()
             }
-            .padding(.horizontal)
-            Spacer()
-        }
-        .padding(12)
-        .background(Color.white)
-        .cornerRadius(15)
+            .padding(12)
+            .background(Color.white)
+            .cornerRadius(15)
         .shadow(radius: 2)
+        }
+        .padding(.horizontal)
     }
 }
 

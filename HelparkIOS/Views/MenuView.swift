@@ -60,6 +60,7 @@ struct MenuView: View {
             .cornerRadius(15)
             .shadow(radius: 2)
         }
+        .padding(.horizontal)
     }
 
 }

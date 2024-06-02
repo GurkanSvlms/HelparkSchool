@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FuelType: Int, Codable {
+enum FuelType: Int, Codable, CaseIterable{
     case gasoline = 1
     case diesel = 2
     case electric = 3
@@ -15,7 +15,6 @@ enum FuelType: Int, Codable {
     case lpg = 5
     case cng = 6
     case hydrogen = 7
-    case unknown = 0
 
     var description: String {
         switch self {
@@ -26,7 +25,6 @@ enum FuelType: Int, Codable {
         case .lpg: return "LPG"
         case .cng: return "CNG"
         case .hydrogen: return "Hidrojen"
-        case .unknown: return "Unknown"
         }
     }
 }

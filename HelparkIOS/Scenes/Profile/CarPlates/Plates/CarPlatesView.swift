@@ -38,7 +38,7 @@ struct CarPlatesView: View {
                     Spacer()
                     
                     Button(action: {
-                        navigationManager.navigate(.profile(.addCard))
+                        navigationManager.navigate(.profile(.addCar))
                     }) {
                         Text("Plaka Ekle")
                             .font(.headline)

@@ -49,8 +49,7 @@ struct PlateItemView: View {
                             .foregroundColor(.green)
                     }
                 }
-                .frame(width: 150)
-                .padding(.trailing, 16)
+                .padding(.trailing)
             }
             .frame(height: 60)
             .background(Color.white)

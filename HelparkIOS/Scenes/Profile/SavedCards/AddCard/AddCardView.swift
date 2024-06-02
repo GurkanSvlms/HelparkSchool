@@ -20,10 +20,6 @@ struct AddCardView: View {
     @State private var cardYear = ""
     @State private var cvv = ""
     
-    @State private var showPopup = false
-    @State private var popupTitle = ""
-    @State private var popupSubtitle = ""
-    
     private var cardDate : String{
         return (cardMonth + cardYear)
     }

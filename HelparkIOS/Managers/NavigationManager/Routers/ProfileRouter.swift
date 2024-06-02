@@ -21,6 +21,8 @@ struct ProfileRouter {
             CarPlatesView()
         case .addCard:
             AddCardView()
+        case .addCar:
+            AddCarView()
         }
     }
 }
@@ -30,4 +32,5 @@ enum ProfileRoutes: Hashable {
     case myCards
     case myCars
     case addCard
+    case addCar
 }

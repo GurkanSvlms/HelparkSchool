@@ -21,24 +21,25 @@ struct ProfileMenuView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 16){
+            VStack{
                 if viewModel.isLoading {
                     LoadingView()
                 } else {
                     ScrollView{
-                        ProfileMenuCardView(userName: $viewModel.userName, userEmail: $viewModel.userEmail, userPhoneNumber: $viewModel.userPhoneNumber)
-                        
-                        WalletCardView(balance: String(viewModel.userWalletBalance))
-                        
-                        ForEach(menuItems) { item in
-                            Button {
-                                handleMenuItemTap(item: item)
-                            } label: {
-                                MenuView(item: item, isLastItem: item == menuItems.last)
-                                    .listRowInsets(EdgeInsets())
+                        VStack{
+                            ProfileMenuCardView(userName: $viewModel.userName, userEmail: $viewModel.userEmail, userPhoneNumber: $viewModel.userPhoneNumber)
+                            
+                            WalletCardView(balance: String(viewModel.userWalletBalance))
+                            
+                            ForEach(menuItems) { item in
+                                Button {
+                                    handleMenuItemTap(item: item)
+                                } label: {
+                                    MenuView(item: item, isLastItem: item == menuItems.last)
+                                        .listRowInsets(EdgeInsets())
+                                }
                             }
                         }
-                        Spacer()
                     }
                 }
             }
@@ -52,7 +53,6 @@ struct ProfileMenuView: View {
                 }
             }
         }
-        .padding(.horizontal)
         .navigationTitle("Profil Bilgilerim")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)

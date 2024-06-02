@@ -86,6 +86,9 @@
 		DF220B6D2C0BD2A8005209C0 /* CarPlateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B6C2C0BD2A8005209C0 /* CarPlateModel.swift */; };
 		DF220B6F2C0BD2B5005209C0 /* CarPlateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B6E2C0BD2B5005209C0 /* CarPlateViewModel.swift */; };
 		DF220B712C0BD873005209C0 /* PlateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B702C0BD873005209C0 /* PlateItemView.swift */; };
+		DF220B732C0BE7C7005209C0 /* AddCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B722C0BE7C7005209C0 /* AddCarView.swift */; };
+		DF220B752C0BE7D4005209C0 /* AddCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B742C0BE7D4005209C0 /* AddCarViewModel.swift */; };
+		DF220B772C0BE7E2005209C0 /* AddCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF220B762C0BE7E2005209C0 /* AddCarModel.swift */; };
 		DF3470A92B697B7B009ED739 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470A82B697B7B009ED739 /* MenuView.swift */; };
 		DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AB2B697FBE009ED739 /* SettingsView.swift */; };
 		DF3470B02B6985C2009ED739 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */; };
@@ -200,6 +203,9 @@
 		DF220B6C2C0BD2A8005209C0 /* CarPlateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateModel.swift; sourceTree = "<group>"; };
 		DF220B6E2C0BD2B5005209C0 /* CarPlateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateViewModel.swift; sourceTree = "<group>"; };
 		DF220B702C0BD873005209C0 /* PlateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateItemView.swift; sourceTree = "<group>"; };
+		DF220B722C0BE7C7005209C0 /* AddCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarView.swift; sourceTree = "<group>"; };
+		DF220B742C0BE7D4005209C0 /* AddCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarViewModel.swift; sourceTree = "<group>"; };
+		DF220B762C0BE7E2005209C0 /* AddCarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarModel.swift; sourceTree = "<group>"; };
 		DF3470A82B697B7B009ED739 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		DF3470AB2B697FBE009ED739 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF3470AF2B6985C2009ED739 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
@@ -537,6 +543,9 @@
 		DF220B692C0BCE82005209C0 /* AddPlates */ = {
 			isa = PBXGroup;
 			children = (
+				DF220B722C0BE7C7005209C0 /* AddCarView.swift */,
+				DF220B742C0BE7D4005209C0 /* AddCarViewModel.swift */,
+				DF220B762C0BE7E2005209C0 /* AddCarModel.swift */,
 			);
 			path = AddPlates;
 			sourceTree = "<group>";
@@ -881,6 +890,7 @@
 				DFB8EBAA2C0912120020FED1 /* OtpView.swift in Sources */,
 				746EEF3A2B6EBB17007A2BE3 /* HomeRouter.swift in Sources */,
 				746EEF362B6EBADA007A2BE3 /* Routes.swift in Sources */,
+				DF220B732C0BE7C7005209C0 /* AddCarView.swift in Sources */,
 				7448A98B2B6FA19400BE9730 /* Strings.swift in Sources */,
 				DF220B632C0BB4A3005209C0 /* SavedCardViewModel.swift in Sources */,
 				DF580FED2B66AF8000A56A35 /* SplashView.swift in Sources */,
@@ -889,6 +899,7 @@
 				746EEF412B6ED5E5007A2BE3 /* String+Extension.swift in Sources */,
 				DF220B392C0B1A56005209C0 /* Keyboard+Extension.swift in Sources */,
 				DF220B6B2C0BD29A005209C0 /* CarPlatesView.swift in Sources */,
+				DF220B772C0BE7E2005209C0 /* AddCarModel.swift in Sources */,
 				DF5810062B66AF8F00A56A35 /* CoreDataManager.swift in Sources */,
 				DFB8EBB22C0921C90020FED1 /* RegisterViewModel.swift in Sources */,
 				DF5810052B66AF8F00A56A35 /* LocationManager.swift in Sources */,
@@ -903,6 +914,7 @@
 				DF3470AC2B697FBE009ED739 /* SettingsView.swift in Sources */,
 				746EEF382B6EBAED007A2BE3 /* NavigationManager.swift in Sources */,
 				DF580FEF2B66AF8000A56A35 /* OnboardingView.swift in Sources */,
+				DF220B752C0BE7D4005209C0 /* AddCarViewModel.swift in Sources */,
 				DF3A04C42B7039E500CF7D7C /* AgreementViewModel.swift in Sources */,
 				7448A9BA2B6FEFD700BE9730 /* Image+Extension.swift in Sources */,
 				7448A9C62B700C2400BE9730 /* FavoritesViewModel.swift in Sources */,
