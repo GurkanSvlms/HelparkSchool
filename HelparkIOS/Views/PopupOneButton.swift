@@ -32,8 +32,10 @@ struct PopupOneButton: View {
                 
                 Text(subtitle)
                     .font(.subheadline)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .padding(.horizontal, 20)
+                    .frame(height: 60)
+                    .padding(.bottom, 24)
                 
                 VStack {
                     if showCloseButton{
@@ -48,7 +50,6 @@ struct PopupOneButton: View {
                                 .background(Color("#3c7484"))
                                 .cornerRadius(10)
                         }
-                        .padding(.top, 20)
                     }
                     
                     Button(action: {
@@ -63,10 +64,9 @@ struct PopupOneButton: View {
                             .cornerRadius(10)
                     }
                 }
-                .padding(.top, 20)
             }
             .padding()
-            .frame(width: 350, height: showCloseButton ? 250 : 200)
+            .frame(width: 350, height: showCloseButton ? 280 : 230)
             .background(Color.white)
             .cornerRadius(20)
             .shadow(radius: 10)

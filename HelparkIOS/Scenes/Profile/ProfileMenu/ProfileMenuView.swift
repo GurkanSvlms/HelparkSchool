@@ -13,6 +13,8 @@ struct ProfileMenuView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     
     @State private var showLogoutPopup = false
+    @State private var showDeletePopup = false
+
     let menuItems: [MenuModel] = [
         MenuModel(title: "Kartlarım", iconName: "card"),
         MenuModel(title: "Araçlarım", iconName: "car"),
@@ -41,6 +43,19 @@ struct ProfileMenuView: View {
                             }
                         }
                     }
+                    Spacer()
+                    
+                    Button(action: {
+                        showDeletePopup = true
+                    }) {
+                        Text("Kullanıcıyı Sil")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 330)
+                            .padding()
+                            .background(.red)
+                            .cornerRadius(16)
+                    }
                 }
             }
             if showLogoutPopup{
@@ -52,6 +67,19 @@ struct ProfileMenuView: View {
                     navigationManager.popToRoot()
                 }
             }
+            if showDeletePopup {
+                PopupOneButton(
+                    showPopup: $showDeletePopup,
+                    title: "Kullanıcı Silme",
+                    subtitle: "Kullanıcı Silme İşlemini Onaylıyor musunuz",
+                    buttonText: "Evet",
+                    showCloseButton: true) {
+                        if let userIdString = try? HPUserDefaultsManager.shared.getModel(.userID, String.self),
+                           let userId = Int32(userIdString) {
+                            viewModel.deleteUser(userId: userId)
+                        }
+                    }
+            }
         }
         .navigationTitle("Profil Bilgilerim")
         .navigationBarTitleDisplayMode(.inline)
@@ -62,6 +90,12 @@ struct ProfileMenuView: View {
                 try viewModel.fetchUserData(userId:  HPUserDefaultsManager.shared.getModel(.userID, String.self))
             } catch {
                 print(HPUserDefaultsError.encodingFailed.localizedDescription)
+            }
+        }
+        .onChange(of: viewModel.userDeleted) {newValue in
+            if newValue{
+                showDeletePopup = false
+                navigationManager.popToRoot()
             }
         }
     }
