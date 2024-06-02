@@ -47,6 +47,7 @@ struct CardItemView: View {
             .shadow(radius: 2)
         }
         .padding(.horizontal)
+        .padding(.top, 8)
     }
 }
 

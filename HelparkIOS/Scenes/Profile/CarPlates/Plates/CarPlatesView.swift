@@ -21,20 +21,27 @@ struct CarPlatesView: View {
                 if viewModel.isLoading {
                     LoadingView()
                 } else {
-                    ScrollView {
-                        VStack {
-                            ForEach(viewModel.userPlates, id: \.id) { plate in
-                                PlateItemView(
-                                    carPlate: plate.plate,
-                                    carModel: plate.model,
-                                    carFuel: plate.fuelTypeId.rawValue)
-                                .onTapGesture {
-                                    showDeletePopup = true
-                                    plateId = String(plate.plate)
+                    if viewModel.userPlates.isEmpty{
+                        Spacer()
+                        EmptyViewComponent()
+                    }
+                    else{
+                        ScrollView {
+                            VStack {
+                                ForEach(viewModel.userPlates, id: \.id) { plate in
+                                    PlateItemView(
+                                        carPlate: plate.plate,
+                                        carModel: plate.model,
+                                        carFuel: plate.fuelTypeId.rawValue)
+                                    .onTapGesture {
+                                        showDeletePopup = true
+                                        plateId = String(plate.plate)
+                                    }
                                 }
                             }
                         }
                     }
+                    
                     Spacer()
                     
                     Button(action: {

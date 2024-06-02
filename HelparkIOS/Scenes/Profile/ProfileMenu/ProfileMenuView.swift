@@ -10,10 +10,14 @@ import SwiftUI
 struct ProfileMenuView: View {
     
     @StateObject var viewModel = ProfileMenuViewModel()
+    @StateObject var addBalanceViewModel = AddBalanceViewModel()
+
     @EnvironmentObject var navigationManager: NavigationManager
     
     @State private var showLogoutPopup = false
     @State private var showDeletePopup = false
+    @State private var showCardSelection = false
+    
 
     let menuItems: [MenuModel] = [
         MenuModel(title: "Kartlarım", iconName: "card"),
@@ -28,10 +32,12 @@ struct ProfileMenuView: View {
                     LoadingView()
                 } else {
                     ScrollView{
-                        VStack{
+                        VStack(spacing:16){
                             ProfileMenuCardView(userName: $viewModel.userName, userEmail: $viewModel.userEmail, userPhoneNumber: $viewModel.userPhoneNumber)
                             
-                            WalletCardView(balance: String(viewModel.userWalletBalance))
+                            WalletCardView(balance: String(viewModel.userWalletBalance)){
+                                showCardSelection = true
+                            }
                             
                             ForEach(menuItems) { item in
                                 Button {
@@ -81,6 +87,13 @@ struct ProfileMenuView: View {
                     }
             }
         }
+        .sheet(isPresented: $showCardSelection, content: {
+            SelectCardView(
+                cards: $viewModel.userCards,
+                showCardSelection: $showCardSelection)
+            .presentationDetents([.height(450)])
+            .topAligned()
+        })
         .navigationTitle("Profil Bilgilerim")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -98,6 +111,15 @@ struct ProfileMenuView: View {
                 navigationManager.popToRoot()
             }
         }
+        .onChange(of: showCardSelection, perform: { value in
+            if !value{
+                do {
+                    try viewModel.fetchUserData(userId:  HPUserDefaultsManager.shared.getModel(.userID, String.self))
+                } catch {
+                    print(HPUserDefaultsError.encodingFailed.localizedDescription)
+                }
+            }
+        })
     }
     private func handleMenuItemTap(item: MenuModel) {
         switch item.title {

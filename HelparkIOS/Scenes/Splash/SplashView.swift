@@ -26,7 +26,7 @@ struct SplashView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding([.trailing, .leading], 20)
                 Spacer()
-                Text("V 1.0.0")
+                Text("Developed By Gürkan Sevilmiş")
                     .foregroundColor(Color("#3c7484"))
                     .padding(10)
             }

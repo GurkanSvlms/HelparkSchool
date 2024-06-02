@@ -10,7 +10,7 @@ import SwiftUI
 struct WalletCardView: View {
     
     @State var balance = ""
-
+    var buttonAction: () -> Void
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 4) {
@@ -38,7 +38,7 @@ struct WalletCardView: View {
                     .padding(.horizontal)
                 
                 Button(action: {
-                    // Bakiye Yükle action
+                    buttonAction()
                 }) {
                     HStack {
                         Image(systemName: "plus")
@@ -63,5 +63,7 @@ struct WalletCardView: View {
     }
 }
 #Preview {
-    WalletCardView(balance : "100")
+    WalletCardView(balance : "100", buttonAction: {
+        
+    })
 }

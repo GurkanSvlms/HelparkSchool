@@ -58,6 +58,7 @@ struct PlateItemView: View {
         .ignoresSafeArea()
         }
         .padding(.horizontal)
+        .padding(.top, 8)
     }
 }
 
