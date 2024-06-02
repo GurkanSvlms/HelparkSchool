@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct EmptyViewComponent: View{
+struct EmptyViewComponent: View {
+    var message = "Kayıt bulunamadı"
+    
     var body: some View {
         VStack {
             Image(systemName: "tray")
@@ -15,10 +17,11 @@ struct EmptyViewComponent: View{
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
                 .foregroundColor(.gray)
-            Text("No items available")
+            Text(message)
                 .font(.title)
                 .foregroundColor(.gray)
                 .padding(.top, 10)
+                .multilineTextAlignment(.center)
         }
         .padding()
     }
@@ -26,6 +29,6 @@ struct EmptyViewComponent: View{
 
 struct EmptyViewComponent_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyViewComponent()
+        EmptyViewComponent(message: "Kayıtlı kart bulunamadı")
     }
 }

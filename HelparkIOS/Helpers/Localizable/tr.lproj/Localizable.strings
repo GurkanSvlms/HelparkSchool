@@ -17,7 +17,8 @@
 "park_type" = "Park Tipi";
 "car_park_tariff" = "Otopark Tarifesi";
 "hour" = "Saat";
-"price" = "Ücret";
+"price" = "Ücretsiz Süre";
+"mountlyPrice" = "Aylık Üyelik";
 "save_park" = "Kayıtlı Otoparklar";
 "agreement" = "Gizlilik Sözleşmesi ve Veri Kullanımı";
 "about" = "Hakkında";

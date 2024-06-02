@@ -14,7 +14,7 @@ struct ParkAnnotationView: View {
 
     var body: some View {
         ZStack {
-            Image("park_pin")
+            Image("park_pin_red")
                 .resizable()
                 .frame(width: 25, height: 25)
                 .aspectRatio(contentMode: .fit)

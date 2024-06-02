@@ -23,7 +23,7 @@ struct CarPlatesView: View {
                 } else {
                     if viewModel.userPlates.isEmpty{
                         Spacer()
-                        EmptyViewComponent()
+                        EmptyViewComponent(message: "Kayıtlı araç bulunamadı")
                     }
                     else{
                         ScrollView {

@@ -23,7 +23,7 @@ struct SelectCardView: View {
             
             if cards.isEmpty{
                 Spacer()
-                EmptyViewComponent()
+                EmptyViewComponent(message: "Kayıtlı kart bulunamadı")
             }
             else{
                 ScrollView {

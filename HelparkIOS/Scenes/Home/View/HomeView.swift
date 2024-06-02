@@ -26,9 +26,9 @@ struct HomeView: View {
         }
 
             .sheet(isPresented: $viewModel.showDetailCard, content: {
-//            CarParkDetailView(carPark: viewModel.selectedCarPark)
-//                .presentationDetents([.height(235), .large])
-//                .topAligned()
+                CarParkDetailView(homeViewModel: viewModel, carPark: viewModel.selectedCarPark ?? .defaultCarPark)
+                .presentationDetents([.height(235), .large])
+                .topAligned()
         })
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)

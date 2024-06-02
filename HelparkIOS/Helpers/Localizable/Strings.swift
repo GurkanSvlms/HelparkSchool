@@ -20,6 +20,7 @@ enum Strings {
     static let carParkTariff = "car_park_tariff".localized()
     static let hour = "hour".localized()
     static let price = "price".localized()
+    static let mountlyPrice = "mountlyPrice".localized()
     static let savePark = "save_park".localized()
     static let agreement = "agreement".localized()
     static let about = "about".localized()
