@@ -11,6 +11,7 @@ struct CarParkDetailView: View {
     @ObservedObject var homeViewModel: HomeViewModel
     let carPark: CarParkModel
     @State private var isExpanded = false
+    @State var showDeleteButton = false
 
     var occupancyColor: Color {
         carPark.emptyCapacity > carPark.capacity / 2 ? .green : .red
@@ -36,11 +37,27 @@ struct CarParkDetailView: View {
                 densityAndLastUpdate
                 someInfo
                 Spacer()
+                
             }
         }
         .scrollIndicators(.hidden)
 //        .onAppear(perform: viewAppear)
         .background(.white)
+        if showDeleteButton{
+            Spacer()
+
+            Button(action: {
+//                showDeletePopup = true
+            }) {
+                Text("Favori Otoparkı Sil")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 330)
+                    .padding()
+                    .background(.red)
+                    .cornerRadius(16)
+            }
+        }
     }
     
     private var header: some View {
@@ -219,5 +236,5 @@ struct CarParkDetailView: View {
 }
 
 #Preview {
-    CarParkDetailView(homeViewModel: HomeViewModel(), carPark: CarParkModel.defaultCarPark)
+    CarParkDetailView(homeViewModel: HomeViewModel(), carPark: CarParkModel.defaultCarPark, showDeleteButton: true)
 }

@@ -6,46 +6,75 @@
 //
 
 import Foundation
-import SwiftUI
+import Combine
 
 class FavoritesViewModel: ObservableObject {
-    @Published var carParks: [CarParkModel] = []
-    @Published var selectedCarPark: CarParkModel = CarParkModel.defaultCarPark
-    @Published var carParkDetail: CarParkDetailModel = CarParkDetailModel.defaultDetail
-    @Published var errorMessage: String? = nil
+    @Published var isLoading = false
+    @Published var error: Error?
+    @Published var errorMessage: String?
+    @Published var successMessage: String?
+    @Published var parks: [CarParkModel] = []
+    @Published var showingError = false
+    @Published var showDetailCard = false
+    @Published var selectedCarPark: CarParkModel?
 
-    @Published var isFavorite: Bool = false
-
-    let userDefaults = HPUserDefaultsManager.shared
-
-    init() {
-        fetchFavoriteCarParks()
-    }
-
-
-    func fetchFavoriteCarParks(_ logEnabled: Bool = true) {
-        do {
-            carParks = try userDefaults.getModel(.favoriteCarParks, [CarParkModel].self)
-        } catch {
-            print(HPUserDefaultsError.decodingFailed.localizedDescription)
+    func fetchFavouriteParks(userId: Int) {
+        guard let url = URL(string: "http://212.20.147.23/User/GetFavourite?userId=\(userId)") else {
+            self.errorMessage = "Invalid URL"
+            self.error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            self.showingError = true
+            return
         }
 
-        if logEnabled {
-            print("fetched car parks: \(carParks)")
-        } else {
-            print("removed car parks: \(carParks)")
-        }
-    }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        isLoading = true
+        error = nil
+        errorMessage = nil
+        parks = []
 
-    func removeCarParkFromFavorite (at offset: IndexSet) {
-        carParks.remove(atOffsets: offset)
-
-        do {
-            try userDefaults.setModel(key: .favoriteCarParks, model: carParks)
-        } catch {
-            print(HPUserDefaultsError.encodingFailed.localizedDescription)
-        }
-
-        fetchFavoriteCarParks(false)
+        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            DispatchQueue.main.async {
+                self?.isLoading = false
+                
+                if let error = error {
+                    self?.error = error
+                    self?.errorMessage = error.localizedDescription
+                    self?.showingError = true
+                    return
+                }
+                
+                guard let data = data else {
+                    self?.errorMessage = "No data received"
+                    self?.error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])
+                    self?.showingError = true
+                    return
+                }
+                
+                // Print raw JSON data
+                if let jsonString = String(data: data, encoding: .utf8) {
+                    print("Received JSON String: \(jsonString)")
+                } else {
+                    print("Received data but could not convert to string")
+                }
+                
+                do {
+                    let response = try JSONDecoder().decode([CarParkModel].self, from: data)
+                    self?.parks = response
+                    print("Parsed Parks: \(response)")
+                } catch let decodingError {
+                    self?.error = decodingError
+                    self?.errorMessage = decodingError.localizedDescription
+                    self?.showingError = true
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print("Failed to decode JSON: \(jsonString)")
+                    } else {
+                        print("Failed to decode data and could not convert to string")
+                    }
+                }
+            }
+        }.resume()
     }
 }

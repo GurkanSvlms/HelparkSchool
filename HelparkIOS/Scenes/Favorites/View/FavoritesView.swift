@@ -8,69 +8,57 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @StateObject var viewModel = FavoritesViewModel()
+    @StateObject private var viewModel = FavoritesViewModel()
+    @State private var userId: Int = 2
 
     var body: some View {
         VStack {
-            if viewModel.carParks.isEmpty {
-                emptyState
+            if viewModel.isLoading {
+                LoadingView()
             } else {
-                list
+                if viewModel.parks.isEmpty{
+                    EmptyViewComponent(message: "Kayıtlı otopark bulunamadı.")
+                }
+                else{
+                    ScrollView {
+                        VStack {
+                            ForEach(viewModel.parks, id: \.id) { park in
+                                FavoriteParkView(
+                                    parkName: park.parkName,
+                                    parkLocation: park.district,
+                                    parkState: park.isOpen)
+                                .onTapGesture {
+                                    viewModel.showDetailCard = true
+                                    viewModel.selectedCarPark = park
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-            .background {
-            Color.gray.opacity(0.2).ignoresSafeArea()
+        .sheet(isPresented: $viewModel.showDetailCard) {
+            if let selectedCarPark = viewModel.selectedCarPark {
+                CarParkDetailView(homeViewModel: HomeViewModel(), carPark: selectedCarPark, showDeleteButton: true)
+            }
         }
-            .scrollIndicators(.hidden)
-            .navigationBarTitle("KAYITLI OTOPARKLAR")
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: CustomBackButtonView())
-
-    }
-
-    private var list: some View {
-        List {
-            ForEach(viewModel.carParks) { carPark in
-                Button {
-                    print(carPark.parkName)
-                } label: {
-                    favoritesRow(carPark)
-                }
-            }.onDelete(perform: delete)
-        }.listStyle(GroupedListStyle())
-    }
-
-    private var emptyState: some View {
-        VStack {
-            Spacer()
-            Image.detailAddFavImage
-                .resizable()
-                .frame(width: 60, height: 60)
-                .aspectRatio(contentMode: .fit)
-            Text("Henüz kayıtlı\notoparkınız yok.")
-                .font(.popBoldTitle3)
-                .multilineTextAlignment(.center)
-            Spacer()
-        }.frame(width: UI.Size.Screen.width)
-    }
-
-    private func delete(at offsets: IndexSet) {
-        withAnimation {
-            viewModel.removeCarParkFromFavorite(at: offsets)
-        }
-    }
-
-    private func favoritesRow(_ carPark: CarParkModel) -> some View {
-        HStack {
-            Text(carPark.parkName)
-                .font(.popRegularSubheadline)
-                .multilineTextAlignment(.leading)
-                .foregroundStyle(Color.black)
-            Spacer()
+        .navigationTitle("Favori Otoparklarım")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: CustomBackButtonView())
+        .onAppear{
+            do {
+                try viewModel.fetchFavouriteParks(userId:  Int(HPUserDefaultsManager.shared.getModel(.userID, String.self)) ?? 1)
+                print(viewModel.parks.count)
+            } catch {
+                print(HPUserDefaultsError.encodingFailed.localizedDescription)
+            }
         }
     }
 }
 
-#Preview {
-    FavoritesView()
+struct FavouriteParksView_Previews: PreviewProvider {
+    static var previews: some View {
+        FavoritesView()
+    }
 }
