@@ -13,6 +13,7 @@ class FavoritesViewModel: ObservableObject {
     @Published var error: Error?
     @Published var errorMessage: String?
     @Published var successMessage: String?
+    @Published var favoriteSuccess: Bool?
     @Published var parks: [CarParkModel] = []
     @Published var showingError = false
     @Published var showDetailCard = false
@@ -84,7 +85,7 @@ class FavoritesViewModel: ObservableObject {
         error = nil
         errorMessage = nil
         successMessage = nil
-
+        
         guard let url = URL(string: "http://212.20.147.23/User/AddOrRemoveFavourite") else {
             self.errorMessage = "Invalid URL"
             self.error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
@@ -129,7 +130,7 @@ class FavoritesViewModel: ObservableObject {
                 
                 do {
                     let response = try JSONDecoder().decode(FavoriteParkResponse.self, from: data)
-                    self?.successMessage = response.message
+                    self?.favoriteSuccess = response.message
                 } catch {
                     self?.error = error
                     self?.errorMessage = error.localizedDescription

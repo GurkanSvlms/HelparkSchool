@@ -21,5 +21,5 @@ struct FavoriteParkRequest: Codable {
 }
 
 struct FavoriteParkResponse: Codable {
-    let message: String
+    let message: Bool
 }

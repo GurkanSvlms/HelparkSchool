@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @StateObject private var viewModel = FavoritesViewModel()
+    @ObservedObject var viewModel = FavoritesViewModel()
     @State private var userId: Int = 2
 
     var body: some View {

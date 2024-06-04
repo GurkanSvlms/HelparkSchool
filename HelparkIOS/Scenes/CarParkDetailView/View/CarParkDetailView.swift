@@ -118,13 +118,18 @@ struct CarParkDetailView: View {
                             addOrRemoveViewModel.addOrRemoveFavorite(request: FavoriteParkRequest(userId: userId, parkId: carPark.id))
                         }
                     } label: {
+                        let isFavorite = addOrRemoveViewModel.favoriteSuccess ?? addOrRemoveViewModel.parks.contains(where: { $0.id == carPark.id })
+
                         HPSquareButton(
-                            image: addOrRemoveViewModel.parks.contains(where: { $0.id == carPark.id }) ? Image.detailFavImage : Image.detailAddFavImage,
+                            image: addOrRemoveViewModel.parks.contains(where: { $0.id == carPark.id }) && isFavorite ? Image.detailFavImage : Image.detailAddFavImage,
                             showStroke: false,
                             color: .red,
                             lenght: 40
                         )
                         .backgroundWithShadow()
+
+
+
                     }
                     .backgroundWithShadow()
                 }
@@ -250,7 +255,6 @@ struct CarParkDetailView: View {
     }
     
     private var priceInfo: some View {
-
         VStack(spacing: UI.Spacing.p2) {
             Text("Ücretler")
                 .font(.popRegularBody)
@@ -258,18 +262,25 @@ struct CarParkDetailView: View {
             Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
                 .foregroundStyle(Color.black.opacity(0.3))
             
-            ForEach(parseFeeScheduleToUiModel(schedule: carPark.formattedPrices).keys.sorted(), id: \.self) { key in
-                Group {
-                    Text(key)
-                        .font(.popRegularBody)
-                    if let price = parseFeeScheduleToUiModel(schedule: carPark.formattedPrices)[key] {
-                        Text(price + "TL")
-                            .font(.popLightSubheadline)
+            if let formattedPrices = carPark.formattedPrices {
+                let feeSchedule = parseFeeScheduleToUiModel(schedule: formattedPrices)
+                ForEach(feeSchedule.keys.sorted(), id: \.self) { key in
+                    Group {
+                        Text(key)
+                            .font(.popRegularBody)
+                        if let price = feeSchedule[key] {
+                            Text(price + "TL")
+                                .font(.popLightSubheadline)
+                        }
                     }
+                    Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
+                        .foregroundStyle(Color.black.opacity(0.3))
                 }
-                Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
-                    .foregroundStyle(Color.black.opacity(0.3))
+            } else {
+                Text("Price data not available")
+                    .font(.popRegularBody)
             }
+            
             Group {
                 Text(Strings.mountlyPrice)
                     .font(.popRegularBody)
@@ -281,6 +292,7 @@ struct CarParkDetailView: View {
         .frame(width: UI.Size.Screen.width - 32)
         .backgroundWithShadow()
     }
+
     
     private func openMapsForDirection() {
         let latitude = carPark.lat

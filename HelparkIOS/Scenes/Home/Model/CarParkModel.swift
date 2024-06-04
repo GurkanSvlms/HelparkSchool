@@ -49,7 +49,7 @@ struct CarParkModel: Codable, Identifiable {
     let parkPoint: String
     let state: Int
     let parkDetail: CarParkDetailModel
-    let formattedPrices: String
+    let formattedPrices: String?
     let hire: Int
     let resTime: Int
 
