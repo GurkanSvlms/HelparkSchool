@@ -79,11 +79,11 @@ class FavoritesViewModel: ObservableObject {
         }.resume()
     }
     
+    func addOrRemoveFavorite(request: FavoriteParkRequest) {
         isLoading = true
         error = nil
         errorMessage = nil
         successMessage = nil
-        self.fetchFavouriteParks(userId: request.userId)
 
         guard let url = URL(string: "http://212.20.147.23/User/AddOrRemoveFavourite") else {
             self.errorMessage = "Invalid URL"
