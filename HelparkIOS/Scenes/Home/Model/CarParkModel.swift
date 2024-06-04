@@ -49,6 +49,9 @@ struct CarParkModel: Codable, Identifiable {
     let parkPoint: String
     let state: Int
     let parkDetail: CarParkDetailModel
+    let formattedPrices: String
+    let hire: Int
+    let resTime: Int
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -66,6 +69,9 @@ struct CarParkModel: Codable, Identifiable {
         case parkPoint
         case state
         case parkDetail
+        case formattedPrices
+        case hire
+        case resTime
     }
 }
 
@@ -109,7 +115,10 @@ extension CarParkModel {
             district: "",
             address: "",
             areaPolygon: ""
-        )
+        ),
+        formattedPrices: "",
+        hire: 0,
+        resTime: 0
     )
 }
 

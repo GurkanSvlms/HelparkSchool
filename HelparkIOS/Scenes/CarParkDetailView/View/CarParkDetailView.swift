@@ -42,6 +42,7 @@ struct CarParkDetailView: View {
                         carParkName
                         densityAndLastUpdate
                         someInfo
+                        priceInfo
                         Spacer()
                         
                     }
@@ -242,8 +243,33 @@ struct CarParkDetailView: View {
                 Text(String(carPark.freeTime) + " dakika")
                     .font(.popLightSubheadline)
             }
+        }
+        .padding()
+        .frame(width: UI.Size.Screen.width - 32)
+        .backgroundWithShadow()
+    }
+    
+    private var priceInfo: some View {
+
+        VStack(spacing: UI.Spacing.p2) {
+            Text("Ücretler")
+                .font(.popRegularBody)
+            
             Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
                 .foregroundStyle(Color.black.opacity(0.3))
+            
+            ForEach(parseFeeScheduleToUiModel(schedule: carPark.formattedPrices).keys.sorted(), id: \.self) { key in
+                Group {
+                    Text(key)
+                        .font(.popRegularBody)
+                    if let price = parseFeeScheduleToUiModel(schedule: carPark.formattedPrices)[key] {
+                        Text(price + "TL")
+                            .font(.popLightSubheadline)
+                    }
+                }
+                Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
+                    .foregroundStyle(Color.black.opacity(0.3))
+            }
             Group {
                 Text(Strings.mountlyPrice)
                     .font(.popRegularBody)
@@ -265,6 +291,21 @@ struct CarParkDetailView: View {
         if UIApplication.shared.canOpenURL(appleMapsURL) {
             UIApplication.shared.open(appleMapsURL, options: [:], completionHandler: nil)
         }
+    }
+    
+    func parseFeeScheduleToUiModel(schedule: String) -> [String: String] {
+        var scheduleMap = [String: String]()
+        let scheduleEntries = schedule.split(separator: ";")
+
+        for entry in scheduleEntries {
+            let parts = entry.split(separator: ":")
+            if parts.count == 2 {
+                let hoursRange = parts[0].trimmingCharacters(in: .whitespaces)
+                let price = parts[1].trimmingCharacters(in: .whitespaces)
+                scheduleMap[hoursRange] = price
+            }
+        }
+        return scheduleMap
     }
 }
 
