@@ -9,14 +9,18 @@ import SwiftUI
 
 struct CarParkDetailView: View {
     @ObservedObject var homeViewModel: HomeViewModel
+    @ObservedObject var addOrRemoveViewModel = FavoritesViewModel()
+    @Environment(\.presentationMode) var presentationMode
+
     let carPark: CarParkModel
-    @State private var isExpanded = false
+    @State var isExpanded = false
     @State var showDeleteButton = false
+    @State private var showDeletePopup = false
 
     var occupancyColor: Color {
         carPark.emptyCapacity > carPark.capacity / 2 ? .green : .red
     }
-
+    
     var occupancyCapacity: Int {
         (carPark.capacity) - (carPark.emptyCapacity)
     }
@@ -30,32 +34,61 @@ struct CarParkDetailView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: UI.Spacing.p3) {
-                header
-                carParkName
-                densityAndLastUpdate
-                someInfo
-                Spacer()
-                
+        ZStack{
+            VStack{
+                ScrollView {
+                    VStack(spacing: UI.Spacing.p3) {
+                        header
+                        carParkName
+                        densityAndLastUpdate
+                        someInfo
+                        Spacer()
+                        
+                    }
+                }
+                .scrollIndicators(.hidden)
+                //        .onAppear(perform: viewAppear)
+                .background(.white)
+                if showDeleteButton{
+                    Spacer()
+                    
+                    Button(action: {
+                        showDeletePopup = true
+                    }) {
+                        Text("Favori Otoparkı Sil")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 330)
+                            .padding()
+                            .background(.red)
+                            .cornerRadius(16)
+                    }
+                }
             }
-        }
-        .scrollIndicators(.hidden)
-//        .onAppear(perform: viewAppear)
-        .background(.white)
-        if showDeleteButton{
-            Spacer()
-
-            Button(action: {
-//                showDeletePopup = true
-            }) {
-                Text("Favori Otoparkı Sil")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(width: 330)
-                    .padding()
-                    .background(.red)
-                    .cornerRadius(16)
+            .navigationBarTitle("Otopark Detayı")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: CustomBackButtonView())
+            .onAppear{
+                if let userIdString = try? HPUserDefaultsManager.shared.getModel(.userID, String.self),
+                   let userId = Int(userIdString) {
+                    addOrRemoveViewModel.fetchFavouriteParks(userId: userId)
+                }
+            }
+            if showDeletePopup {
+                PopupOneButton(
+                    showPopup: $showDeletePopup,
+                    title: "Plaka Silme",
+                    subtitle: "Plaka Silme İşlemini Onaylıyor musunuz",
+                    buttonText: "Evet",
+                    showCloseButton: true) {
+                        if let userIdString = try? HPUserDefaultsManager.shared.getModel(.userID, String.self),
+                           let userId = Int(userIdString) {
+                            addOrRemoveViewModel.addOrRemoveFavorite(request: FavoriteParkRequest(userId: userId, parkId: carPark.id))
+                            showDeletePopup = false
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
             }
         }
     }
@@ -76,14 +109,27 @@ struct CarParkDetailView: View {
                     HPSquareButton(image: Image.detailDirectionImage, showStroke: false, color: .blue, lenght: 40)
                 }
                 .backgroundWithShadow()
-
-//                Button {
-//                    favoriteAction()
-//                } label: {
-//                    HPSquareButton(image: homeViewModel.isFavorite ? Image.detailFavImage : Image.detailAddFavImage, showStroke: false, color: .red, lenght: 40)
-//                }
+                
+                if !showDeleteButton{
+                    Button {
+                        if let userIdString = try? HPUserDefaultsManager.shared.getModel(.userID, String.self),
+                           let userId = Int(userIdString) {
+                            addOrRemoveViewModel.addOrRemoveFavorite(request: FavoriteParkRequest(userId: userId, parkId: carPark.id))
+                        }
+                    } label: {
+                        HPSquareButton(
+                            image: addOrRemoveViewModel.parks.contains(where: { $0.id == carPark.id }) ? Image.detailFavImage : Image.detailAddFavImage,
+                            showStroke: false,
+                            color: .red,
+                            lenght: 40
+                        )
+                        .backgroundWithShadow()
+                    }
+                    .backgroundWithShadow()
+                }
             }
         }.padding()
+        
     }
     
     private var carParkName: some View {
@@ -220,19 +266,6 @@ struct CarParkDetailView: View {
             UIApplication.shared.open(appleMapsURL, options: [:], completionHandler: nil)
         }
     }
-    
-//    private func viewAppear() {
-//        homeViewModel.selectedCarPark = carPark
-//        $homeViewModel.isFavoriteCheck()
-//    }
-//    
-//    private func favoriteAction() {
-//        if homeViewModel.isFavorite {
-//            homeViewModel.removeFromFavorite()
-//        } else {
-//            homeViewModel.saveToFavorite()
-//        }
-//    }
 }
 
 #Preview {

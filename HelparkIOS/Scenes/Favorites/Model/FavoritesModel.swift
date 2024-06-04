@@ -15,3 +15,11 @@ struct GetFavouriteResponse: Codable {
     let parks: [CarParkModel]
 }
 
+struct FavoriteParkRequest: Codable {
+    let userId: Int
+    let parkId: Int
+}
+
+struct FavoriteParkResponse: Codable {
+    let message: String
+}

@@ -12,6 +12,10 @@ struct FavoritesView: View {
     @State private var userId: Int = 2
 
     var body: some View {
+        NavigationLink(
+            destination: CarParkDetailView(homeViewModel: HomeViewModel(), carPark: viewModel.selectedCarPark ?? CarParkModel.defaultCarPark, isExpanded: viewModel.showDetailCard, showDeleteButton: true),
+            isActive: $viewModel.showDetailCard)
+        { EmptyView() }
         VStack {
             if viewModel.isLoading {
                 LoadingView()
@@ -35,11 +39,6 @@ struct FavoritesView: View {
                         }
                     }
                 }
-            }
-        }
-        .sheet(isPresented: $viewModel.showDetailCard) {
-            if let selectedCarPark = viewModel.selectedCarPark {
-                CarParkDetailView(homeViewModel: HomeViewModel(), carPark: selectedCarPark, showDeleteButton: true)
             }
         }
         .navigationTitle("Favori Otoparklarım")
