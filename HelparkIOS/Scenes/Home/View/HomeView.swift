@@ -49,6 +49,13 @@ struct HomeView: View {
         HStack {
             Spacer()
             VStack {
+                
+                Button {
+                    
+                } label: {
+                    HPSquareButton(image: Image("search"))
+                }
+                
                 Button {
                     tapMyLocationAction()
                 } label: {
