@@ -226,15 +226,6 @@ struct CarParkDetailView: View {
             Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
                 .foregroundStyle(Color.black.opacity(0.3))
             Group {
-                Text(Strings.forDirections)
-                    .font(.popRegularBody)
-                Text(carPark.parkDetail.tariff)
-                    .multilineTextAlignment(.center)
-                    .font(.popLightSubheadline)
-            }
-            Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
-                .foregroundStyle(Color.black.opacity(0.3))
-            Group {
                 Text(Strings.parkType)
                     .font(.popRegularBody)
                 Text(carPark.parkType)
@@ -262,7 +253,7 @@ struct CarParkDetailView: View {
             Rectangle().frame(width: UI.Size.Screen.width - 50, height: 1)
                 .foregroundStyle(Color.black.opacity(0.3))
             
-            if let formattedPrices = carPark.formattedPrices {
+            if let formattedPrices = carPark.parkDetail.tariff {
                 let feeSchedule = parseFeeScheduleToUiModel(schedule: formattedPrices)
                 ForEach(feeSchedule.keys.sorted(), id: \.self) { key in
                     Group {

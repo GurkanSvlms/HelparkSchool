@@ -15,10 +15,12 @@ struct CarParkDetailModel: Codable {
     let updateDate: String
     let workHours: String
     let monthlyFee: Double
-    let tariff: String
+    let tariff: String?
     let district: String
     let address: String
     let areaPolygon: String
+    let hire: Double
+    let resTime: Int
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -30,6 +32,8 @@ struct CarParkDetailModel: Codable {
         case district
         case address
         case areaPolygon
+        case hire
+        case resTime
     }
 }
 
@@ -49,9 +53,6 @@ struct CarParkModel: Codable, Identifiable {
     let parkPoint: String
     let state: Int
     let parkDetail: CarParkDetailModel
-    let formattedPrices: String?
-    let hire: Int
-    let resTime: Int
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -69,9 +70,6 @@ struct CarParkModel: Codable, Identifiable {
         case parkPoint
         case state
         case parkDetail
-        case formattedPrices
-        case hire
-        case resTime
     }
 }
 
@@ -114,11 +112,10 @@ extension CarParkModel {
             tariff: "",
             district: "",
             address: "",
-            areaPolygon: ""
-        ),
-        formattedPrices: "",
-        hire: 0,
-        resTime: 0
+            areaPolygon: "",
+            hire: 0.0,
+            resTime: 0
+        )
     )
 }
 
@@ -132,6 +129,8 @@ extension CarParkDetailModel {
         tariff: "",
         district: "",
         address: "",
-        areaPolygon: ""
+        areaPolygon: "",
+        hire: 0.0,
+        resTime: 0
     )
 }
