@@ -24,6 +24,9 @@ class HomeViewModel: ObservableObject {
     @Published var successMessage: String?
     @Published var selectedDistrict: DistrictModel?
     @Published var updateMapView = false
+    @Published var region: MKCoordinateRegion = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 40.9609, longitude: 29.1904),
+            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     func fetchParks() {
         

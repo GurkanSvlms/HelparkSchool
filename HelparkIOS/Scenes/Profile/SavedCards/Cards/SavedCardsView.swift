@@ -21,14 +21,20 @@ struct SavedCardsView: View {
                 if viewModel.isLoading {
                     LoadingView()
                 } else {
-                    ScrollView {
-                        VStack {
-                            ForEach(viewModel.userCards, id: \.id) { card in
-                                CardItemView(cardName: card.cardName, cardNumber: card.cardNumber)
-                                    .onTapGesture {
-                                        showDeletePopup = true
-                                        cardId = String(card.id)
-                                    }
+                    if viewModel.userCards.isEmpty{
+                        Spacer()
+                        EmptyViewComponent(message: "Kayıtlı araç bulunamadı")
+                    }
+                    else{
+                        ScrollView {
+                            VStack {
+                                ForEach(viewModel.userCards, id: \.id) { card in
+                                    CardItemView(cardName: card.cardName, cardNumber: card.cardNumber)
+                                        .onTapGesture {
+                                            showDeletePopup = true
+                                            cardId = String(card.id)
+                                        }
+                                }
                             }
                         }
                     }

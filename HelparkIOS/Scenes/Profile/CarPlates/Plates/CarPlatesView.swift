@@ -39,7 +39,6 @@ struct CarPlatesView: View {
                                         carPlate: plate.plate,
                                         carModel: plate.model,
                                         carFuel: plate.fuelTypeId.rawValue)
-                                    .background(!plateId.isEmpty ? Color.gray : Color.white)
                                     .onTapGesture {
                                         if selectButton{
                                             plateId = String(plate.plate)

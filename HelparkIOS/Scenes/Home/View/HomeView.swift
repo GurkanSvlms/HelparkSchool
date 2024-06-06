@@ -39,7 +39,7 @@ struct HomeView: View {
             
         })
         .sheet(isPresented: $viewModel.showSearchSheet, content: {
-            SearchView(viewModel: HomeViewModel())
+            SearchView(viewModel: viewModel)
                 .topAligned()
             
         })

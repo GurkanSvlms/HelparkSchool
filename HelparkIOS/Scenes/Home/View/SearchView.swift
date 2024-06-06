@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Combine
+import MapKit
 
 struct SearchView: View {
-    @StateObject var viewModel = HomeViewModel()
+    @ObservedObject var viewModel: HomeViewModel
     @State private var searchText = ""
     @Environment(\.presentationMode) var presentationMode
 
@@ -17,13 +19,13 @@ struct SearchView: View {
         NavigationView {
             VStack {
                 // Search bar
-                HStack {
+                HStack(spacing: 0) {
                     Image(systemName: "magnifyingglass")
                     TextField("İlçe Ara", text: $searchText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                 }
-                .padding()
+                .padding(8)
                 
                 // List of districts
                 List {
@@ -44,19 +46,17 @@ struct SearchView: View {
                         }
                     }
                 }
-                
                 Spacer()
             }
+            .background(.white)
             .onAppear{
                 viewModel.fetchDistrict()
             }
             .onDisappear{
-                viewModel.fetchParksByRadius(district: viewModel.selectedDistrict?.semt, lat: viewModel.selectedDistrict?.lat ?? "" , lng: viewModel.selectedDistrict?.lng ?? "", radius: 7.0)
+                viewModel.fetchParksByRadius(district: viewModel.selectedDistrict?.semt, lat: viewModel.selectedDistrict?.lat ?? "" , lng: viewModel.selectedDistrict?.lng ?? "", radius: 5.0)
             }
-            .navigationBarTitle("Search Districts", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Cancel") {
-                viewModel.selectedDistrict = nil
-            })
+            .navigationBarTitle("İlçe Seç", displayMode: .inline)
+            .navigationBarBackButtonHidden() 
         }
         .navigationViewStyle(StackNavigationViewStyle()) // Full screen for all devices
     }
