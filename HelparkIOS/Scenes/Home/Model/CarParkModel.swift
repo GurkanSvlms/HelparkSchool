@@ -37,7 +37,7 @@ struct CarParkDetailModel: Codable {
     }
 }
 
-struct CarParkModel: Codable, Identifiable {
+struct CarParkModel: Codable, Identifiable, Equatable{
     let id: Int
     let parkName: String
     let lat: String
@@ -54,6 +54,10 @@ struct CarParkModel: Codable, Identifiable {
     let state: Int
     let parkDetail: CarParkDetailModel
 
+    static func == (lhs: CarParkModel, rhs: CarParkModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case parkName
@@ -70,6 +74,29 @@ struct CarParkModel: Codable, Identifiable {
         case parkPoint
         case state
         case parkDetail
+    }
+}
+
+struct DistrictModel: Codable, Identifiable {
+    let id = UUID()
+    let sehir: String
+    let semt: String
+    let lat: String
+    let lng: String
+
+    enum CodingKeys: String, CodingKey {
+        case sehir
+        case semt
+        case lat
+        case lng
+    }
+}
+
+struct DistrictListModel: Codable {
+    let districts: [DistrictModel]
+
+    enum CodingKeys: String, CodingKey {
+        case districts = "districts"
     }
 }
 

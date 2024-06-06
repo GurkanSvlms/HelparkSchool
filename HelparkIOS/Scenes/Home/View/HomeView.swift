@@ -22,16 +22,29 @@ struct HomeView: View {
                 Spacer()
                 homeButtons
             }
+            .onAppear {
+                if let userLocation = locationManager.userLocation {
+                    viewModel.fetchParksByRadius(district: "a", lat: String(userLocation.latitude), lng: String(userLocation.longitude), radius: 7.0)
+                } else {
+                    viewModel.fetchParksByRadius(district: "a", lat: "40.9609", lng: "29.1904", radius: 7.0)
+                }
+            }
             loadingView
         }
-
-            .sheet(isPresented: $viewModel.showDetailCard, content: {
-                CarParkDetailView(homeViewModel: viewModel, carPark: viewModel.selectedCarPark ?? .defaultCarPark)
+        
+        .sheet(isPresented: $viewModel.showDetailCard, content: {
+            CarParkDetailView(homeViewModel: viewModel, carPark: viewModel.selectedCarPark ?? .defaultCarPark)
                 .presentationDetents([.height(235), .large])
                 .topAligned()
+            
         })
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+        .sheet(isPresented: $viewModel.showSearchSheet, content: {
+            SearchView(viewModel: HomeViewModel())
+                .topAligned()
+            
+        })
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 
     private var mapView: some View {
@@ -51,7 +64,7 @@ struct HomeView: View {
             VStack {
                 
                 Button {
-                    
+                    viewModel.showSearchSheet = true
                 } label: {
                     HPSquareButton(image: Image("search"))
                 }
