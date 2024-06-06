@@ -18,7 +18,7 @@ struct ProfileRouter {
         case .myCards:
             SavedCardsView()
         case .myCars:
-            CarPlatesView()
+            CarPlatesView(parkId: 0, resTime: 0, hire: 0)
         case .addCard:
             AddCardView()
         case .addCar:

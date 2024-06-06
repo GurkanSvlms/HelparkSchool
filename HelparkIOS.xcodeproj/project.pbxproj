@@ -100,6 +100,8 @@
 		DF4E2C352C1108E8009293F0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DF4E2C342C1108E8009293F0 /* FirebaseDatabase */; };
 		DF4E2C372C1108E8009293F0 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF4E2C362C1108E8009293F0 /* FirebaseDatabaseSwift */; };
 		DF4E2C3A2C111124009293F0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E2C392C111124009293F0 /* SearchView.swift */; };
+		DF4E2C3D2C1139AC009293F0 /* RezervationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E2C3C2C1139AC009293F0 /* RezervationModel.swift */; };
+		DF4E2C3F2C1139B9009293F0 /* RezervationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E2C3E2C1139B9009293F0 /* RezervationViewModel.swift */; };
 		DF580FCC2B66AE0200A56A35 /* HelparkIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FCB2B66AE0200A56A35 /* HelparkIOSApp.swift */; };
 		DF580FD32B66AE0300A56A35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF580FD22B66AE0300A56A35 /* Preview Assets.xcassets */; };
 		DF580FEA2B66AF8000A56A35 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF580FE22B66AF8000A56A35 /* HomeView.swift */; };
@@ -226,6 +228,8 @@
 		DF3A04C32B7039E500CF7D7C /* AgreementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewModel.swift; sourceTree = "<group>"; };
 		DF4E2C302C1106A3009293F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF4E2C392C111124009293F0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DF4E2C3C2C1139AC009293F0 /* RezervationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezervationModel.swift; sourceTree = "<group>"; };
+		DF4E2C3E2C1139B9009293F0 /* RezervationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezervationViewModel.swift; sourceTree = "<group>"; };
 		DF580FC82B66AE0200A56A35 /* HelparkIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelparkIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF580FCB2B66AE0200A56A35 /* HelparkIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelparkIOSApp.swift; sourceTree = "<group>"; };
 		DF580FD22B66AE0300A56A35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -631,6 +635,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF4E2C3B2C113841009293F0 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				DF4E2C3C2C1139AC009293F0 /* RezervationModel.swift */,
+				DF4E2C3E2C1139B9009293F0 /* RezervationViewModel.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
 		DF580FBF2B66AE0200A56A35 = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +698,7 @@
 		DF580FE02B66AF8000A56A35 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DF4E2C3B2C113841009293F0 /* Reservation */,
 				DF220B3C2C0B4DF1005209C0 /* Profile */,
 				DFB8EBA82C0911D60020FED1 /* Otp */,
 				DF0382BC2BE0078300404EC6 /* Authentication */,
@@ -966,6 +980,7 @@
 				DFB8EBAA2C0912120020FED1 /* OtpView.swift in Sources */,
 				746EEF3A2B6EBB17007A2BE3 /* HomeRouter.swift in Sources */,
 				746EEF362B6EBADA007A2BE3 /* Routes.swift in Sources */,
+				DF4E2C3F2C1139B9009293F0 /* RezervationViewModel.swift in Sources */,
 				DF220B732C0BE7C7005209C0 /* AddCarView.swift in Sources */,
 				7448A98B2B6FA19400BE9730 /* Strings.swift in Sources */,
 				DF220B632C0BB4A3005209C0 /* SavedCardViewModel.swift in Sources */,
@@ -1029,6 +1044,7 @@
 				DF220B6D2C0BD2A8005209C0 /* CarPlateModel.swift in Sources */,
 				DF8D28642C0C7F5D00E61D57 /* AddBalanceViewModel.swift in Sources */,
 				DFA690562C0609BC00186754 /* ValidationTextField.swift in Sources */,
+				DF4E2C3D2C1139AC009293F0 /* RezervationModel.swift in Sources */,
 				DF8D28612C0C7F3800E61D57 /* AddBalanceView.swift in Sources */,
 				DF580FEC2B66AF8000A56A35 /* HomeViewModel.swift in Sources */,
 				DF580FFA2B66AF8B00A56A35 /* ParkAnnotationView.swift in Sources */,

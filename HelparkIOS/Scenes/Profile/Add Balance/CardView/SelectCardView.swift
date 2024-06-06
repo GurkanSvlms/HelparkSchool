@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SelectCardView: View {
     
+
     @State private var cardId = ""
     @Binding var cards : [CardModel]
     @Binding var showCardSelection : Bool

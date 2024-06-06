@@ -10,12 +10,15 @@ import SwiftUI
 struct CarParkDetailView: View {
     @ObservedObject var homeViewModel: HomeViewModel
     @ObservedObject var addOrRemoveViewModel = FavoritesViewModel()
+    @StateObject var viewModel = ProfileMenuViewModel()
+
     @Environment(\.presentationMode) var presentationMode
 
     let carPark: CarParkModel
     @State var isExpanded = false
     @State var showDeleteButton = false
     @State private var showDeletePopup = false
+    @State private var showCardSheet = false
 
     var occupancyColor: Color {
         carPark.emptyCapacity > carPark.capacity / 2 ? .green : .red
@@ -76,6 +79,7 @@ struct CarParkDetailView: View {
                     addOrRemoveViewModel.fetchFavouriteParks(userId: userId)
                 }
             }
+
             if showDeletePopup {
                 PopupOneButton(
                     showPopup: $showDeletePopup,

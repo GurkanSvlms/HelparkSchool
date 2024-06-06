@@ -16,6 +16,7 @@ class ProfileMenuViewModel: ObservableObject {
     @Published var user: UserProfileModel?
     @Published var userName = ""
     @Published var userEmail = ""
+    @Published var userPlateId = ""
     @Published var userPhoneNumber = ""
     @Published var userWalletBalance = 0.0
     @Published var showingError = false

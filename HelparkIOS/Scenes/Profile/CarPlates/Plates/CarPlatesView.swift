@@ -10,10 +10,16 @@ import SwiftUI
 struct CarPlatesView: View {
     @StateObject var viewModel = ProfileMenuViewModel()
     @StateObject var deleteViewModel = CarPlateViewModel()
+    @ObservedObject var reservationViewModel = RezervationViewModel()
+
     @EnvironmentObject var navigationManager: NavigationManager
     @State private var userId = ""
     @State private var plateId = ""
     @State private var showDeletePopup = false
+    @State var selectButton = false
+    @State var parkId : Int
+    @State var resTime : Int
+    @State var hire : Int
     
     var body: some View {
         ZStack{
@@ -33,9 +39,15 @@ struct CarPlatesView: View {
                                         carPlate: plate.plate,
                                         carModel: plate.model,
                                         carFuel: plate.fuelTypeId.rawValue)
+                                    .background(!plateId.isEmpty ? Color.gray : Color.white)
                                     .onTapGesture {
-                                        showDeletePopup = true
-                                        plateId = String(plate.plate)
+                                        if selectButton{
+                                            plateId = String(plate.plate)
+                                        }
+                                        else{
+                                            showDeletePopup = true
+                                            plateId = String(plate.plate)
+                                        }
                                     }
                                 }
                             }
@@ -44,16 +56,35 @@ struct CarPlatesView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        navigationManager.navigate(.profile(.addCar))
-                    }) {
-                        Text("Plaka Ekle")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(width: 330)
-                            .padding()
-                            .background(Color("#3c7484"))
-                            .cornerRadius(16)
+                    if selectButton{
+                        Button(action: {
+                            do {
+                                try reservationViewModel.addRezervation(userId: Int(HPUserDefaultsManager.shared.getModel(.userID, String.self)) ?? 2, carPlateId: Int(plateId) ?? 1, parkId: parkId, resTime: resTime, hire: hire)
+                            } catch {
+                                print(HPUserDefaultsError.encodingFailed.localizedDescription)
+                            }
+                        }) {
+                            Text("Plaka Seç")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(width: 330)
+                                .padding()
+                                .background(Color("#3c7484"))
+                                .cornerRadius(16)
+                        }
+                    }
+                    else{
+                        Button(action: {
+                            navigationManager.navigate(.profile(.addCar))
+                        }) {
+                            Text("Plaka Ekle")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(width: 330)
+                                .padding()
+                                .background(Color("#3c7484"))
+                                .cornerRadius(16)
+                        }
                     }
                 }
             }
@@ -102,6 +133,6 @@ struct CarPlatesView: View {
 
 struct CarPlatesView_Previews: PreviewProvider {
     static var previews: some View {
-        CarPlatesView()
+        CarPlatesView(parkId: 1, resTime: 1, hire: 1)
     }
 }
